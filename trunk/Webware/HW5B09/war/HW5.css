@@ -1,0 +1,23 @@
+/* Make Daffy special */
+
+.daffy {color : Green; font-size : 200%;}
+
+.thumbnail .daffy {
+	color : Maroon; 
+	font-size : medium; 
+	font-family : courier;
+	}
+
+.caption {margin-right : 55pt;}
+
+.misty {background-color : LightGrey; color : BurlyWood;}
+
+html {background-color : BlanchedAlmond;}
+
+h1 {color : blue; text-decoration : underline;}
+
+span em {text-decoration : blink;}
+
+.poemFirst {font-size : 25pt;}
+
+hr {visibility : hidden;}
