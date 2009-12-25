@@ -1,0 +1,77 @@
+/* Eric Greer*/
+h1
+{
+	color:#00FFFF;
+	text-align:center;
+}
+
+h1.error
+{
+	color:#FF0000;
+	text-align:center;
+}
+
+h2
+{
+	color:#231F20;
+	text-align:center;
+}
+
+body
+{
+	background-color:#D2B48C;
+}
+
+a:link {
+	color: #003DF5;
+	text-decoration: underline; 
+}
+
+li
+{
+	color:#2F4F4F;
+	list-style-position:inside;
+}
+
+li.visable {
+	
+}
+
+li.invis {
+	visibility:hidden;
+	position:absolute;
+}
+
+li span {
+  margin-left: 2em;
+  margin-top:-1.25em;
+}
+
+form{
+	text-align:center;
+}
+
+div.center
+{
+	text-align:center;
+}
+
+
+div.list
+{
+	width: 500px;
+	margin: 0 auto;
+	border-style: double;
+	background-color:#F0F8FF;
+}
+
+p.error{
+	color:#FF4500;
+	font-size: 1.5em;
+}
+
+p.footer
+{
+	text-align:center;
+	font-size: 85%;
+}
