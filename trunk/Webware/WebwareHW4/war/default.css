@@ -1,0 +1,67 @@
+/* Eric Greer & Jason Codding*/
+h1
+{
+	color:#006295;
+	text-align:center;
+}
+
+h2
+{
+	color:#231F20;
+	text-align:center;
+}
+
+body
+{
+	text-align:center;
+	background-color:#C2EF3E;
+}
+
+body.left
+{
+	text-align:left;
+	background-color:#C2EF3E;
+}
+
+
+li
+{
+	color:#A60000;
+}
+
+table
+{
+	text-align:center;
+	margin:0 auto;
+}
+
+div.colored
+{
+	width:500px;
+	border-style: double;
+	background-color:#35C1C8;
+	margin:0 auto;
+	word-wrap: break-word;
+	padding:25px 25px 25px 25px;
+}
+
+tr
+{
+	text-align:center;
+}
+
+tr.error
+{
+	color:#E50112;
+	text-align:center;
+}
+
+td.bold
+{
+	font-weight: bold;
+}
+
+p.footer
+{
+	font-size: 85%;
+}
