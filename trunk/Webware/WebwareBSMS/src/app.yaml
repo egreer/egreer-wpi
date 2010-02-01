@@ -1,0 +1,15 @@
+application: egreer-web
+version: 2
+runtime: python
+api_version: 1
+
+handlers:
+- url: /(robots.txt|favicon.ico)
+  static_files: static/\1
+  upload: static/(robots.txt|favicon.ico)
+  
+- url: /static
+  static_dir: static
+  
+- url: /.*
+  script: main.py
