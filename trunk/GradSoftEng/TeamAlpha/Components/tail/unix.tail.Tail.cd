@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.tail.Tail" version="1.0" installer="$workspace/TeamAlpha/Components/tail" >
+
+  <PropertyList>
+    <Author></Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>a429eaec9bfec7700ba840615bae3b22</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>2313</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912142341</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>+n</Property>
+    <Property>-n</Property>
+    <Property>-r</Property>
+    <Property>+n</Property>
+    <Property>-n</Property>
+    <Property>-r</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/tail/Tail.class" qualifiedName="unix.tail.Tail"  />
+</Contents>
+
+</Component>
+

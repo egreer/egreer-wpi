@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.stdout.Stdout" version="1.1" installer="$workspace/Tutorial/Components/stdout" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://compunit.org/unix/stdin/Stdin</ComponentURL>
+    <DigitalFingerPrint>4270bc052aebd0132a7db5bc0a3e5162</DigitalFingerPrint>
+    <Email>root@compunit.org</Email>
+    <FileSize>3732</FileSize>
+    <LicenseRequired>false</LicenseRequired>
+    <ReleaseDate>200912032248</ReleaseDate>
+    <Threaded>false</Threaded>
+    <VendorName>Heineman Software, Inc.</VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>org.compunit.interfaces.IShutdown</RequiredInterface>
+    <Property>File</Property>
+    <Property>File</Property>
+    <Property>File</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/stdout/Stdout.class" qualifiedName="unix.stdout.Stdout"  />
+   <Entry sourceDir="$workspace/Tutorial/bin/unix/core" qualifiedName="unix.core"  />
+</Contents>
+
+</Component>
+

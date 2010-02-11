@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.head.Head" version="1.0" installer="$workspace/TeamAlpha/Components/head" >
+
+  <PropertyList>
+    <Author></Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>ab90ced9218f354a3a5d345f92197fa4</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1109</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912142246</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>-n</Property>
+    <Property>-n</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/head/Head.class" qualifiedName="unix.head.Head"  />
+</Contents>
+
+</Component>
+
