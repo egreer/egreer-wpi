@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="App2">
+<PROPERTIES name="META"/>
+<COMPONENTS>
+<COMPONENT class="unix.stdin.Stdin" name="Stdin" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="27"/>
+<PROPERTY name="y" value="99"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdout.Stdout" name="Stdout" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="223"/>
+<PROPERTY name="y" value="97"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.wc.Wc" name="Wc" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="138"/>
+<PROPERTY name="y" value="100"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="Wc" target="Stdout"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Stdin" target="Wc"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Stdin"/>
+<ORDER name="Stdout"/>
+<ORDER name="Wc"/>
+</ACTIVATION>
+</APPLICATION>

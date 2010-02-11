@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.uniq.Uniq" version="1.0" installer="$workspace/Tutorial/Components/uniq" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>cf0d43ad34624e711cd483f808b7b62e</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>2142</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912110135</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>CountRepeat</Property>
+    <Property>DeleteUniq</Property>
+    <Property>OnlyUnique</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/uniq/Uniq.class" qualifiedName="unix.uniq.Uniq"  />
+</Contents>
+
+</Component>
+

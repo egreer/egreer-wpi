@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="App3">
+<PROPERTIES name="META"/>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="69"/>
+<PROPERTY name="compUnit-y" value="322"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.stdin.Stdin" name="Stdin" version="1.0">
+<PROPERTIES name="meta">
+<PROPERTY name="File" value="README.txt"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="41"/>
+<PROPERTY name="y" value="81"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.grep.Grep" name="Grep" version="1.0">
+<PROPERTIES name="meta">
+<PROPERTY name="Expression" value="from"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="unix.interfaces.IOutput R bounds" value="3,10,30"/>
+<PROPERTY name="x" value="136"/>
+<PROPERTY name="y" value="81"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.wc.Wc" name="Wc" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="unix.interfaces.IOutput P bounds" value="1,9,0"/>
+<PROPERTY name="unix.interfaces.IOutput R bounds" value="3,9,30"/>
+<PROPERTY name="x" value="136"/>
+<PROPERTY name="y" value="163"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdout.Stdout" name="Stdout" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="193"/>
+<PROPERTY name="y" value="218"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="Stdin" target="Grep"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Grep" target="Wc"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="Stdout" target="CompUnit"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Wc" target="Stdout"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Stdin"/>
+<ORDER name="Grep"/>
+<ORDER name="Wc"/>
+<ORDER name="Stdout"/>
+</ACTIVATION>
+</APPLICATION>

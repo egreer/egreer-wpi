@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.Starter" version="1.0" installer="$workspace/Tutorial/Components" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>ab45f7c5fc0df5c1fcf1cbb0829d8cb7</DigitalFingerPrint>
+    <Email>egreer@gmail.com</Email>
+    <FileSize>821</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912110207</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <RequiredInterface>org.compunit.interfaces.ICommandLine</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/Starter.class" qualifiedName="unix.Starter"  />
+</Contents>
+
+</Component>
+
