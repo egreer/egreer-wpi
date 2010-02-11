@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="tail_positive3">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="242"/>
+<PROPERTY name="compUnit-y" value="108"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="175"/>
+<PROPERTY name="y" value="21"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.tail.Tail" name="Tail" version="1.0">
+<PROPERTIES name="meta">
+<PROPERTY name="n" value="+4"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="55"/>
+<PROPERTY name="y" value="78"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.tail.TailDriver" name="TailDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="30"/>
+<PROPERTY name="y" value="31"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="TailDriver" target="Tail"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="TailDriver" target="SuiteRunner"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tail" target="TailDriver"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Tail"/>
+<ORDER name="SuiteRunner"/>
+<ORDER name="TailDriver"/>
+</ACTIVATION>
+</APPLICATION>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.stdout.StdoutDriver" version="1.0" installer="$workspace/Unix/test/unix/stdout" >
+
+  <PropertyList>
+    <Author>Peter Kalauskas</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>68f4c3f4903d5d31f6e612190e5dfdae</DigitalFingerPrint>
+    <Email>peter.kalauskas@wpi.edu</Email>
+    <FileSize>1432</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912141714</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/stdout/StdoutDriver.class" qualifiedName="unix.stdout.StdoutDriver"  />
+   <Entry sourceFile="$workspace/CompUnit/bin/org/compunit/suiterunner/IJUnitSuite.class" qualifiedName="org.compunit.suiterunner.IJUnitSuite"  />
+</Contents>
+
+</Component>
+

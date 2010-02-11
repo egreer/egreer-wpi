@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.tail.TailDriver" version="1.0" installer="$workspace/UnixHw3/components" >
+
+  <PropertyList>
+    <Author></Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>6e17928c0f40c529cc30fb9b7b3d99a3</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1883</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912141847</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/UnixHw3/bin/unix/tail/TailDriver.class" qualifiedName="unix.tail.TailDriver"  />
+   <Entry sourceFile="$workspace/UnixHw3/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/CompUnit/bin/org/compunit/suiterunner/IJUnitSuite.class" qualifiedName="org.compunit.suiterunner.IJUnitSuite"  />
+</Contents>
+
+</Component>
+

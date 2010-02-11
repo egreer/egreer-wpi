@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.cat.Cat" version="1.0" installer="$workspace/Unix/src/unix/cat" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>fbe7722379245a0b0dcdf7095f2d2e6e</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>650</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912071128</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/cat/Cat.class" qualifiedName="unix.cat.Cat"  />
+</Contents>
+
+</Component>
+

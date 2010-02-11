@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.cat.CatDriver" version="1.0" installer="$workspace/Unix/test/unix/cat" >
+
+  <PropertyList>
+    <Author></Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>9cf607964bbf1147a1e8fbd901d0564f</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>3588</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912111708</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/CompUnit/bin/org/compunit/interfaces/ICommandLine.class" qualifiedName="org.compunit.interfaces.ICommandLine"  />
+   <Entry sourceFile="$workspace/CompUnit/bin/org/compunit/suiterunner/IJUnitSuite.class" qualifiedName="org.compunit.suiterunner.IJUnitSuite"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/cat/CatDriver.class" qualifiedName="unix.cat.CatDriver"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/core/OutputDriver.class" qualifiedName="unix.core.OutputDriver"  />
+</Contents>
+
+</Component>
+

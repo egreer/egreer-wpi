@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="uniq">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="292"/>
+<PROPERTY name="compUnit-y" value="218"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.uniq.Uniq" name="Uniq" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="79"/>
+<PROPERTY name="y" value="69"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.uniq.UniqDriver" name="UniqDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="50"/>
+<PROPERTY name="y" value="121"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="193"/>
+<PROPERTY name="y" value="121"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="UniqDriver" target="Uniq"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Uniq" target="UniqDriver"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="UniqDriver" target="SuiteRunner"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Uniq"/>
+<ORDER name="UniqDriver"/>
+<ORDER name="SuiteRunner"/>
+</ACTIVATION>
+</APPLICATION>

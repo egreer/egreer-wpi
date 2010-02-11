@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="uniq-c">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="271"/>
+<PROPERTY name="compUnit-y" value="178"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.cat.Cat" name="Cat" version="1.0">
+<PROPERTIES name="meta">
+<PROPERTY name="u" value="true"/>
+<PROPERTY name="d" value="false"/>
+<PROPERTY name="c" value="true"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="66"/>
+<PROPERTY name="y" value="21"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="172"/>
+<PROPERTY name="y" value="78"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.cat.CatDriver" name="CatDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="40"/>
+<PROPERTY name="y" value="78"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="CatDriver" target="Cat"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="CatDriver" target="SuiteRunner"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Cat" target="CatDriver"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Cat"/>
+<ORDER name="SuiteRunner"/>
+<ORDER name="CatDriver"/>
+</ACTIVATION>
+</APPLICATION>

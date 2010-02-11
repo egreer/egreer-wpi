@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.sort.Sort" version="1.0" installer="$workspace/Unix/src/unix/sort" >
+
+  <PropertyList>
+    <Author>Peter Kalauskas</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>2bf67c452e54dae8d270c56d7271175c</DigitalFingerPrint>
+    <Email>peter.kalauskas</Email>
+    <FileSize>1973</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912091955</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>n</Property>
+    <Property>n</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/sort/Sort.class" qualifiedName="unix.sort.Sort"  />
+</Contents>
+
+</Component>
+

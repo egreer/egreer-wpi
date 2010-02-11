@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.tail.Tail" version="1.0" installer="$workspace/UnixHw3/components" >
+
+  <PropertyList>
+    <Author>Han Wang</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>d8006d9ca59a7581aa4e1b8cd6a10ad0</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>5779</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912141830</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>n</Property>
+    <Property>r</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/UnixHw3/bin/unix/tail/Tail.class" qualifiedName="unix.tail.Tail"  />
+   <Entry sourceDir="$workspace/UnixHw3/bin/unix/core" qualifiedName="unix.core"  />
+</Contents>
+
+</Component>
+
