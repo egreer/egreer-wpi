@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.uniq.UniqTester" version="1.0" installer="$workspace/Tutorial/Components/uniq" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>8c81bcd40b756da8eb583f09047400df</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>3384</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912110140</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/uniq/UniqTester.class" qualifiedName="unix.uniq.UniqTester"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/uniq/UniqTest.class" qualifiedName="unix.uniq.UniqTest"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+</Contents>
+
+</Component>
+

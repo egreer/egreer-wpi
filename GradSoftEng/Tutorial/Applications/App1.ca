@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="App1">
+<PROPERTIES name="META"/>
+<COMPONENTS>
+<COMPONENT class="unix.cat.Cat" name="Cat" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="unix.interfaces.IOutput P bounds" value="4,0,27"/>
+<PROPERTY name="x" value="98"/>
+<PROPERTY name="y" value="77"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdout.Stdout" name="Stdout" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="unix.interfaces.IOutput P bounds" value="4,0,27"/>
+<PROPERTY name="x" value="231"/>
+<PROPERTY name="y" value="85"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdin.Stdin" name="Stdin" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="14"/>
+<PROPERTY name="y" value="74"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.wc.Wc" name="Wc" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="unix.interfaces.IOutput P bounds" value="4,0,25"/>
+<PROPERTY name="x" value="168"/>
+<PROPERTY name="y" value="86"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="Stdin" target="Cat"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Wc" target="Stdout"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Cat" target="Wc"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Cat"/>
+<ORDER name="Stdout"/>
+<ORDER name="Stdin"/>
+<ORDER name="Wc"/>
+</ACTIVATION>
+</APPLICATION>

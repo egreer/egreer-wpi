@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.cat.Cat" version="1.1" installer="$workspace/Tutorial/Components/cat" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>a6296da89831f87a8ef4e5a869bc1e5f</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>3144</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912032204</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceDir="$workspace/Tutorial/bin/unix/core" qualifiedName="unix.core"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/cat/Cat.class" qualifiedName="unix.cat.Cat"  />
+</Contents>
+
+</Component>
+

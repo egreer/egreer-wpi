@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.wc.Wc" version="1.1" installer="$workspace/Tutorial/Components/wc" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>3e8c257a84bc5868f7d1793da955ac7b</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>3037</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912032205</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Tutorial/bin/unix/core" qualifiedName="unix.core"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/wc/Wc.class" qualifiedName="unix.wc.Wc"  />
+</Contents>
+
+</Component>
+
