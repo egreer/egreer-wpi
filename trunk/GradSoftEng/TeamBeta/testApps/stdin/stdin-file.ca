@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="stdin-file">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="382"/>
+<PROPERTY name="compUnit-y" value="181"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.stdin.Stdin" name="Stdin" version="1.0">
+<PROPERTIES name="meta">
+<PROPERTY name="File" value="stdin-file.txt"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="30"/>
+<PROPERTY name="y" value="24"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="283"/>
+<PROPERTY name="y" value="74"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdin.StdinFileDriver" name="StdinFileDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="114"/>
+<PROPERTY name="y" value="104"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="StdinFileDriver" target="SuiteRunner"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Stdin" target="StdinFileDriver"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Stdin"/>
+<ORDER name="SuiteRunner"/>
+<ORDER name="StdinFileDriver"/>
+</ACTIVATION>
+</APPLICATION>

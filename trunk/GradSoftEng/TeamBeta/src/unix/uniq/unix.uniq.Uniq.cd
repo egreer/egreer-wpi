@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.uniq.Uniq" version="1.0" installer="$workspace/TeamBeta/src/unix/uniq" >
+
+  <PropertyList>
+    <Author>Nam Do</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>2325420a8eb13f249de31796097fbdb9</DigitalFingerPrint>
+    <Email>namdo@wpi.edu</Email>
+    <FileSize>1287</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912101521</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName>WPI</VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>c</Property>
+    <Property>d</Property>
+    <Property>u</Property>
+    <Property>c</Property>
+    <Property>d</Property>
+    <Property>u</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamBeta/bin/unix/uniq/Uniq.class" qualifiedName="unix.uniq.Uniq"  />
+</Contents>
+
+</Component>
+

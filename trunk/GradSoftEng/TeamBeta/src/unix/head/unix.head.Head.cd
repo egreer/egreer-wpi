@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.head.Head" version="1.0" installer="$foundation/unix.head" >
+
+  <PropertyList>
+    <Author>Jatin Tak</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>87432f2a373ee8a4521cb3bef81a3aa3</DigitalFingerPrint>
+    <Email>jatint@wpi.edu</Email>
+    <FileSize>5480</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912141455</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>n</Property>
+    <Property>n</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/TeamBeta/bin/unix/core" qualifiedName="unix.core"  />
+   <Entry sourceFile="$workspace/TeamBeta/bin/unix/head/Head.class" qualifiedName="unix.head.Head"  />
+</Contents>
+
+</Component>
+

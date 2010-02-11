@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="stdout">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="331"/>
+<PROPERTY name="compUnit-y" value="163"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.stdout.Stdout" name="Stdout" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="180"/>
+<PROPERTY name="y" value="19"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.stdout.StdoutDriver" name="StdoutDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="47"/>
+<PROPERTY name="y" value="67"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="232"/>
+<PROPERTY name="y" value="67"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="StdoutDriver" target="Stdout"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="StdoutDriver" target="SuiteRunner"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Stdout"/>
+<ORDER name="StdoutDriver"/>
+<ORDER name="SuiteRunner"/>
+</ACTIVATION>
+</APPLICATION>

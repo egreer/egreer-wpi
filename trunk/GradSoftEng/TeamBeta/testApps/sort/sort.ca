@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="unnumbered">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="295"/>
+<PROPERTY name="compUnit-y" value="188"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.sort.Sort" name="Sort" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="77"/>
+<PROPERTY name="y" value="199"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.sort.SortDriver" name="SortDriver" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="56"/>
+<PROPERTY name="y" value="101"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="196"/>
+<PROPERTY name="y" value="101"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="SortDriver" target="Sort"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Sort" target="SortDriver"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="SortDriver" target="SuiteRunner"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Sort"/>
+<ORDER name="SortDriver"/>
+<ORDER name="SuiteRunner"/>
+</ACTIVATION>
+</APPLICATION>

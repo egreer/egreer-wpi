@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.grep.Grep" version="1.0" installer="$workspace/Unix/src/unix/grep" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>88e73d5b3112e0eb08360218124a45b1</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1803</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912071202</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>CountOnly</Property>
+    <Property>Negative</Property>
+    <Property>CaseSensitive</Property>
+    <Property>Expression</Property>
+    <Property>CountOnly</Property>
+    <Property>Negative</Property>
+    <Property>CaseSensitive</Property>
+    <Property>Expression</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/grep/Grep.class" qualifiedName="unix.grep.Grep"  />
+</Contents>
+
+</Component>
+

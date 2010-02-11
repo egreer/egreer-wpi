@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.stdout.Stdout" version="1.1" installer="$workspace/Unix/src/unix/stdout" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>97c3428d94154088bf337c16242146af</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1684</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912071704</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>org.compunit.interfaces.IShutdown</RequiredInterface>
+    <Property>File</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/stdout/Stdout.class" qualifiedName="unix.stdout.Stdout"  />
+</Contents>
+
+</Component>
+

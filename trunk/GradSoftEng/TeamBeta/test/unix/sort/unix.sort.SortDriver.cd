@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.sort.SortDriver" version="1.0" installer="$workspace/Unix/test/unix/sort" >
+
+  <PropertyList>
+    <Author></Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>7bfad08f0dbb833b817cb520e96948be</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1761</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912122241</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Unix/bin/unix/sort/SortDriver.class" qualifiedName="unix.sort.SortDriver"  />
+   <Entry sourceFile="$workspace/Unix/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/CompUnit/bin/org/compunit/suiterunner/IJUnitSuite.class" qualifiedName="org.compunit.suiterunner.IJUnitSuite"  />
+</Contents>
+
+</Component>
+
