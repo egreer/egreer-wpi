@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="edu.wpi.cs.egreer.Quote" version="1.0" installer="$workspace/QuoteComponent" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL>http://users.wpi.edu/~egreer/CS509/Components/Quote</ComponentURL>
+    <DigitalFingerPrint>baded3fc729d28b3303ea9ba6220a5f1</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>1157</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912071234</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>org.compunit.examples.quote.IQuote</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/QuoteComponent/bin/org/compunit/examples/quote/IQuote.class" qualifiedName="org.compunit.examples.quote.IQuote"  />
+   <Entry sourceFile="$workspace/QuoteComponent/bin/edu/wpi/cs/egreer/Quote.class" qualifiedName="edu.wpi.cs.egreer.Quote"  />
+</Contents>
+
+</Component>
+
