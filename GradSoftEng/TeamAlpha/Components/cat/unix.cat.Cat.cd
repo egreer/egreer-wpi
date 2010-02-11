@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.cat.Cat" version="1.0" installer="$workspace/TeamAlpha/Components/cat" >
+
+  <PropertyList>
+    <Author>Murad</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>a87a091b0573142497834ef64369e63b</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1098</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912142356</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>-n</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/cat/Cat.class" qualifiedName="unix.cat.Cat"  />
+</Contents>
+
+</Component>
+

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="UnixTests">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="SuiteRunner"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="62"/>
+<PROPERTY name="compUnit-y" value="261"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="unix.Tester" name="Tester" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="241"/>
+<PROPERTY name="y" value="46"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="org.compunit.suiterunner.SuiteRunner" name="SuiteRunner" version="1.1">
+<PROPERTIES name="meta">
+<PROPERTY name="main" value="main"/>
+</PROPERTIES>
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="134"/>
+<PROPERTY name="y" value="174"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.uniq.Uniq" name="Uniq" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="26"/>
+<PROPERTY name="y" value="19"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.head.Head" name="Head" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="25"/>
+<PROPERTY name="y" value="64"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.tail.Tail" name="Tail" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="91"/>
+<PROPERTY name="y" value="26"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.sort.Sort" name="Sort" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="166"/>
+<PROPERTY name="y" value="95"/>
+</PROPERTIES>
+</COMPONENT>
+<COMPONENT class="unix.cat.Cat" name="Cat" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="110"/>
+<PROPERTY name="y" value="88"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="unix.interfaces.IOutput" source="Uniq" target="Tester"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Head" target="Tester"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tail" target="Tester"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Sort" target="Tester"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Cat" target="Tester"/>
+<CONNECT destination="org.compunit.suiterunner.IJUnitSuite" source="Tester" target="SuiteRunner"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tester" target="Uniq"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tester" target="Head"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tester" target="Tail"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tester" target="Sort"/>
+<CONNECT destination="unix.interfaces.IOutput" source="Tester" target="Cat"/>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="SuiteRunner" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="Tester"/>
+<ORDER name="SuiteRunner"/>
+<ORDER name="Uniq"/>
+<ORDER name="Head"/>
+<ORDER name="Tail"/>
+<ORDER name="Sort"/>
+<ORDER name="Cat"/>
+</ACTIVATION>
+</APPLICATION>

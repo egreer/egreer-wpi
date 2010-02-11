@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.Tester" version="1.0" installer="$workspace/TeamAlpha/Components/Tester" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>675fd39b8024e8d91e43b64f239997fc</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>12602</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912150110</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <RequiredInterface>org.compunit.suiterunner.IJUnitSuite</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/head/HeadTest.class" qualifiedName="unix.head.HeadTest"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/tail/TailTest.class" qualifiedName="unix.tail.TailTest"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/uniq/UniqTest.class" qualifiedName="unix.uniq.UniqTest"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/sort/SortTest.class" qualifiedName="unix.sort.SortTest"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/cat/CatTest.class" qualifiedName="unix.cat.CatTest"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/Tester.class" qualifiedName="unix.Tester"  />
+</Contents>
+
+</Component>
+

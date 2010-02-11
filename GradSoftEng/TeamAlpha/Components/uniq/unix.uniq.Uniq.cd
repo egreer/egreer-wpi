@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.uniq.Uniq" version="1.0" installer="$workspace/TeamAlpha/Components/uniq" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>34c767bd1fa6f50a579d23b30d582040</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>2348</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200912121549</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>unix.interfaces.IOutput</ProvidedInterface>
+    <RequiredInterface>unix.interfaces.IOutput</RequiredInterface>
+    <Property>CountRepeat</Property>
+    <Property>DeleteUniq</Property>
+    <Property>OnlyUnique</Property>
+    <Property>CountRepeat</Property>
+    <Property>DeleteUniq</Property>
+    <Property>OnlyUnique</Property>
+    <Property>CountRepeat</Property>
+    <Property>DeleteUniq</Property>
+    <Property>OnlyUnique</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/TeamAlpha/bin/unix/uniq/Uniq.class" qualifiedName="unix.uniq.Uniq"  />
+</Contents>
+
+</Component>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lpf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation='http://www.wpi.edu/~heineman/lpf/
+                       http://www.wpi.edu/~heineman/lpf/lpf.xsd'
+   xsi:noNamespaceSchemaLocation='lpf.xsd'>
+
+  <!-- test board -->
+  <puzzle version="1.0" type="sudoku" difficulty="2" width="9" height="9">
+    <board name="initial">
+	  <row contents="5-----279"/>
+      <row contents="3----28-1"/>
+      <row contents="--------3"/>
+      <row contents="-835-7-6-"/>
+      <row contents="71-6-----"/>
+      <row contents="----3892-"/>
+      <row contents="------386"/>
+      <row contents="6328-971-"/>
+      <row contents="----1----"/>
+    </board>
+	<board name="solution">
+	  <row contents="561483279"/>
+      <row contents="347962851"/>
+      <row contents="928751643"/>
+      <row contents="283597164"/>
+      <row contents="719624538"/>
+      <row contents="456138927"/>
+      <row contents="194275386"/>
+      <row contents="632849715"/>
+      <row contents="875316492"/>
+	</board>
+  </puzzle>
+</lpf>
