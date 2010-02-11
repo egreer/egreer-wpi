@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="org.compunit.cafe.CAFEditor" version="2.1" installer="$workspace/CompUnit/components/org/compunit/cafe" >
+
+  <PropertyList>
+    <Author>Natasha Bogdanova, George Heineman</Author>
+    <ComponentURL>http://compunit.org/components/org/compunit/cafe</ComponentURL>
+    <DigitalFingerPrint>a80287a4844a1f0a093c168af31d11dd</DigitalFingerPrint>
+    <Email>root@compunit.org</Email>
+    <FileSize>75354</FileSize>
+    <LicenseRequired>false</LicenseRequired>
+    <ReleaseDate>200907281526</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName>CompUnit.org Development</VendorName>
+    <RequiredInterface>org.compunit.interfaces.IExplorer</RequiredInterface>
+    <RequiredInterface>org.compunit.interfaces.IShutdown</RequiredInterface>
+    <RequiredInterface>org.compunit.interfaces.ICDFParser</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/CompUnit/bin/org/compunit/cafe/graphcomponents" qualifiedName="org.compunit.cafe.graphcomponents.CAFEProvidedInterface"  />
+   <Entry sourceDir="$workspace/CompUnit/bin/org/compunit/cafe/guicomponents/actionlisteners" qualifiedName="org.compunit.cafe.guicomponents.actionlisteners.CAFESaveCAFListener"  />
+   <Entry sourceDir="$workspace/CompUnit/bin/org/compunit/cafe/guicomponents" qualifiedName="org.compunit.cafe.guicomponents.CAFEComponentPropertiesPanel"  />
+   <Entry sourceDir="$workspace/CompUnit/bin/org/compunit/cafe/exceptions" qualifiedName="org.compunit.cafe.exceptions.InterfacesDoNotMatchException"  />
+   <Entry sourceDir="$workspace/CompUnit/bin/org/compunit/cafe" qualifiedName="org.compunit.cafe.CafeWindowListener"  />
+   <Entry sourceArchive="$release/foundation.jar" qualifiedName="org.compunit.interfaces.ICDFParser"  />
+   <Entry sourceArchive="$release/foundation.jar" qualifiedName="org.compunit.interfaces.IExplorer"  />
+   <Entry sourceArchive="$release/foundation.jar" qualifiedName="org.compunit.interfaces.IShutdown"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/compUnitIcon.jpg" resourceName="/org/compunit/cafe/icons/compUnitIcon.jpg"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/general/About16.gif" resourceName="/org/compunit/cafe/icons/general/About16.gif"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/new16.gif" resourceName="/org/compunit/cafe/icons/new16.gif"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/general/Open16.gif" resourceName="/org/compunit/cafe/icons/general/Open16.gif"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/general/Save16.gif" resourceName="/org/compunit/cafe/icons/general/Save16.gif"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/general/New16.gif" resourceName="/org/compunit/cafe/icons/general/New16.gif"  />
+   <Resource sourceFile="$workspace/CompUnit/components/org/compunit/cafe/icons/general/Help16.gif" resourceName="/org/compunit/cafe/icons/general/Help16.gif"  />
+</Contents>
+
+</Component>
+

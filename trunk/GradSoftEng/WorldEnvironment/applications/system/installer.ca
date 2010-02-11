@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--                                                                                   -->
+<!-- CAF Application File for Launching the Installer                                  -->
+<!-- 						                                                           -->
+<!-- COMPONENTS:				                                                       -->
+<!--     zyl.installerGUI.InstallerFrame                                               -->
+<!--         @author: Yilei Zheng (zhengyl@cs.wpi.edu)                                 -->
+<!--         @URL: unknown				                                               -->
+<!--                                                                                   -->
+<!-- DEPENDENCIES:                                                                     -->
+<!--    1. Depends upon a component to support IInstaller, which is a pre-defined      -->
+<!--       interface provided by a system component assumed to be part of the CMI      -->
+<!--       installation.                                                               -->
+<!--    2. Depends upon IShutdown to properly exit from the stage.                     -->
+<!--                                                                                   -->
+<!-- NOTES:                                                                            -->
+<!--    1. Something is instantiated and never disposed of, preventing Foundation from -->
+<!--       exiting after Installer has been run. Still trying to track this one down.  -->
+
+
+<APPLICATION name="installer" schema="1.0">
+
+  <COMPONENTS>
+     <COMPONENT name="InstallerGUI" version="1.0" class="org.compunit.installer.gui.InstallerFrame"/>
+  </COMPONENTS>
+
+  <!-- shutdown always exists within application -->
+  <CONNECTIONS>
+    <!-- Special case: This will actually connect with special proxy shutdown component customized just for us. -->
+	<CONNECT source="InstallerGUI" target="CompUnit" destination="org.compunit.interfaces.IShutdown"/>
+	
+	<CONNECT source="InstallerGUI" target="CompUnit" destination="org.compunit.installer.core.InternalInstallerInterface"/>	
+  </CONNECTIONS>
+  
+  <ACTIVATION>
+    <ORDER name="InstallerGUI" threaded="false"/>
+  </ACTIVATION>
+  
+</APPLICATION>

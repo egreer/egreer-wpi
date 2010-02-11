@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="unix.wc.Wc" version="1.0" installer="$workspace/Tutorial" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>1df7ad08ad00faadf2cabf7413f2a11f</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>1224</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200911291420</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/interfaces/IOutput.class" qualifiedName="unix.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Tutorial/bin/unix/wc/Wc.class" qualifiedName="unix.wc.Wc"  />
+</Contents>
+
+</Component>
+

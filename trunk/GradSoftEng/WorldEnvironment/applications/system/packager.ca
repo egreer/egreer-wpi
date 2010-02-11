@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<APPLICATION SCHEMA="1.0" name="packager">
+<COMPONENTS>
+  <COMPONENT class="org.compunit.packager.Packager" file="org.compunit.packager.Packager.jar" name="Packager">
+  </COMPONENT>
+  <COMPONENT class="org.compunit.packager.batch.Batch" file="org.compunit.packager.batch.Batch.jar" name="Batch">
+  </COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+  <CONNECT destination="org.compunit.interfaces.IShutdown" source="Packager" target="CompUnit"/>
+  <CONNECT destination="org.compunit.packager.ICreateInstallFile" source="Packager" target="Batch"/>
+  <CONNECT destination="org.compunit.interfaces.IErrorLog" source="Packager" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.ICDFParser" source="Packager" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.IPathExpander" source="Packager" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.ICDModeler" source="Packager" target="CompUnit"/>
+
+  <CONNECT destination="org.compunit.interfaces.IMD5" source="Batch" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.IErrorLog" source="Batch" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.ICDFParser" source="Batch" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.ICDFWriter" source="Batch" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.IPathExpander" source="Batch" target="CompUnit"/>
+  <CONNECT destination="org.compunit.interfaces.IArchiveManager" source="Batch" target="CompUnit"/>
+
+</CONNECTIONS>
+<ACTIVATION>
+  <ORDER name="Batch"/>
+  <ORDER name="Packager"/>
+</ACTIVATION>
+</APPLICATION>

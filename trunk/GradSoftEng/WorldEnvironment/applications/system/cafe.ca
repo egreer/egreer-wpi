@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<APPLICATION name="cafe" schema="1.0">
+
+<COMPONENTS>
+  <COMPONENT name="CAFEditor" class="org.compunit.cafe.CAFEditor" version="2.1"/>
+</COMPONENTS>
+
+<CONNECTIONS>
+  <CONNECT source="CAFEditor" target="CompUnit" destination="org.compunit.interfaces.IShutdown"/>
+  
+  <!-- special services available and ready -->
+  <CONNECT source="CAFEditor" target="CompUnit" destination="org.compunit.interfaces.IExplorer"/>
+  <CONNECT source="CAFEditor" target="CompUnit" destination="org.compunit.interfaces.ICDFParser"/>
+</CONNECTIONS>
+
+<ACTIVATION>
+  <ORDER name="CAFEditor"/>
+</ACTIVATION>
+
+</APPLICATION>
