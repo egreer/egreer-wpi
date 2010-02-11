@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="world">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="World"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="hello.World" name="World" version="1.0">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="x" value="185"/>
+<PROPERTY name="y" value="122"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS/>
+<ACTIVATION>
+<ORDER name="World"/>
+</ACTIVATION>
+</APPLICATION>

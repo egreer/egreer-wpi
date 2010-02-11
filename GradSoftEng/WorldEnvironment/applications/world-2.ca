@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<APPLICATION SCHEMA="1.0" name="world-2">
+<PROPERTIES name="META">
+<PROPERTY name="main" value="World"/>
+</PROPERTIES>
+<PROPERTIES name="CAFE">
+<PROPERTY name="compUnit-x" value="62"/>
+<PROPERTY name="compUnit-y" value="252"/>
+</PROPERTIES>
+<COMPONENTS>
+<COMPONENT class="hello.World" name="World" version="1.1">
+<PROPERTIES name="org.compunit.cafe.CAFEditor">
+<PROPERTY name="org.compunit.interfaces.IShutdown R bounds" value="3,21,30"/>
+<PROPERTY name="x" value="68"/>
+<PROPERTY name="y" value="66"/>
+</PROPERTIES>
+</COMPONENT>
+</COMPONENTS>
+<CONNECTIONS>
+<CONNECT destination="org.compunit.interfaces.IShutdown" source="World" target="CompUnit"/>
+</CONNECTIONS>
+<ACTIVATION>
+<ORDER name="World"/>
+</ACTIVATION>
+</APPLICATION>

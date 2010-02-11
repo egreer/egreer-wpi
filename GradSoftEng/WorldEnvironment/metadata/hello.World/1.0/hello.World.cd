@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="hello.World" version="1.0" installer="$workspace/HelloWorld2/components" >
+
+  <PropertyList>
+    <Author>Eric Greer</Author>
+    <ComponentURL></ComponentURL>
+    <DigitalFingerPrint>5a0660cb12770f02b6d7354cdbf1cb0b</DigitalFingerPrint>
+    <Email>egreer@wpi.edu</Email>
+    <FileSize>789</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200911291316</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>org.compunit.interfaces.ICommandLine</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceFile="$workspace/HelloWorld2/bin/hello/World.class" qualifiedName="hello.World"  />
+</Contents>
+
+</Component>
+
