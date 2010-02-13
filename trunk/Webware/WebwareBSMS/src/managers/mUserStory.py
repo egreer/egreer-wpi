@@ -9,7 +9,7 @@ from entities import Estimate
 
 class mUserStory(object):
     '''
-    The User Story manager
+    Manages functions relating to User Stories and estimates
     '''
 
     def __init__(self):
@@ -19,8 +19,8 @@ class mUserStory(object):
 
     def CreateUserStory(self, user, title, description, testnotes, usernames):
         '''
-        Creates user and adds to database
-        @param User: The user trying to delete
+        Creates user story and adds to database
+        @param User: The user trying to create
         @param title: The title of the story
         @param description: The description
         @param testnotes: The test notes of the story
@@ -107,7 +107,7 @@ class mUserStory(object):
     def EstimateUserStory(self, key, user, estimate):
         '''
         Estimates the user story
-        @param key: The key for  the user story
+        @param key: The key for the user story
         @param user: The username of the estimator
         @param estimate: The estimate
         '''
@@ -143,6 +143,11 @@ class mUserStory(object):
         return False
     
     def CheckEstimates(self, key):
+        '''
+        Checks to see if the last estimate was given for a particular story
+        @param key: The key of the story to check
+        @return: The final estimate of the story, or None is the story is not complete   
+        '''
         query = db.GqlQuery("SELECT * FROM UserStory WHERE __key__ = :1", db.Key(key));
         story = query.get()
         

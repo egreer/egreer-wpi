@@ -9,7 +9,8 @@ from entities import User
 
 class Estimate(db.Model):
     '''
-    Estimate Object
+    The Estimate Object
+    Contains a reference to user story, estimating user, and the estimate 
     '''
 
     userStory = db.ReferenceProperty(UserStory.UserStory)

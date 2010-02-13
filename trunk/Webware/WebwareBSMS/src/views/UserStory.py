@@ -10,17 +10,22 @@ from managers import mUserStory as mstory
 
 class UserStory(object):
     '''
-    The login page creator
+    The User Story page creator
     '''
-    storyTemplate = Templates.Templates()
-    storypage = ''
+    manageTemplate = Templates.Templates()
+    managepage = ''
 
 
     def writeStory(self, success, error, currUser, mode, key):
         '''
-           Creates the string representing the login page
+        Creates the string representing the story page
+        @param success: The success message to print on the page
+        @param error: The error message to print on the page
+        @param currUser: The current username to manage
+        @param mode: The mode of the page (Create | Edit | Delete | Estimate) 
+        @param key: The key of the user story (from DB) 
+        @return: Returns a string representing the user story page 
         '''
-        totalEstimate = 0
         currentStory = None
         
         if mode == "Edit" or mode == "Delete" or mode == "Estimate" or mode == "View":
@@ -52,77 +57,77 @@ class UserStory(object):
             estReadOnly = 'disabled=\"disabled\"'
              
             
-        self.storypage += self.storyTemplate.SetTitle(mode + ' User Story')
-        self.storypage += self.storyTemplate.SetHeaderLinks('''<li class="first"><a href="/UserStories">User Stories</a></li>
+        self.managepage += self.manageTemplate.SetTitle(mode + ' User Story')
+        self.managepage += self.manageTemplate.SetHeaderLinks('''<li class="first"><a href="/UserStories">User Stories</a></li>
                 <li class="active"><a href="/UserStory?type=Create">New User Story</a></li>
                 <li><a href="/UserManagement.jsp">User Management</a></li>
                 <li><a href="/Logout">Logout</a></li>
                 ''')
-        self.storypage += self.storyTemplate.contentStart
+        self.managepage += self.manageTemplate.contentStart
         
         
-        self.storypage += '''
+        self.managepage += '''
                     <!-- User Story Form  -->
                     <form action="/UserStory" method="post" class="f-wrap-1" onsubmit="return '''
                     
         if mode == "Estimate":
-            self.storypage += 'checkEstimate(this);">'
+            self.managepage += 'checkEstimate(this);">'
         else:            
-            self.storypage += 'checkUserStory(this);">'
+            self.managepage += 'checkUserStory(this);">'
                 
-        self.storypage += '''
+        self.managepage += '''
                     <div class="req"><b>*</b> Indicates required field</div>
                 
                     <fieldset>
                 
                     <h3><%= pageType %> User Story</h3>
                   '''
-        self.storypage += self.storyTemplate.SetMessages(success, error)
+        self.managepage += self.manageTemplate.SetMessages(success, error)
 
         #Final Estimate
         if currentStory.finalEstimate != None:
-            self.storypage += '<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units: ' + str(currentStory.finalEstimate) +'</b></span>'
+            self.managepage += '<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units: ' + str(currentStory.finalEstimate) +'</b></span>'
         
                             
         #Title Field
-        self.storypage += '<label for="title"><b><span class="req">*</span>Title:</b>'
-        self.storypage += '<input ' + readOnly + ' id="title" name="title" type="text" class="f-name" tabindex="1" value="'+ currentStory.title + '" /><br /></label>'
+        self.managepage += '<label for="title"><b><span class="req">*</span>Title:</b>'
+        self.managepage += '<input ' + readOnly + ' id="title" name="title" type="text" class="f-name" tabindex="1" value="'+ currentStory.title + '" /><br /></label>'
                     
         #Description field
-        self.storypage += '<label for="description"><b><span class="req">*</span>Description:</b> <textarea ' + readOnly + ' id="description" name="description" class="f-comments" rows="6" cols="20" tabindex="2">'
-        self.storypage += currentStory.description + '</textarea><br /></label>'
+        self.managepage += '<label for="description"><b><span class="req">*</span>Description:</b> <textarea ' + readOnly + ' id="description" name="description" class="f-comments" rows="6" cols="20" tabindex="2">'
+        self.managepage += currentStory.description + '</textarea><br /></label>'
                     
         #Test Notes Field
-        self.storypage += '<label for="testnotes"><b>Test Notes:</b><textarea ' + readOnly + ' id="testnotes" name="testnotes" class="f-comments" rows="6" cols="20" tabindex="3">'
-        self.storypage += currentStory.testNotes + '</textarea><br /></label>'
+        self.managepage += '<label for="testnotes"><b>Test Notes:</b><textarea ' + readOnly + ' id="testnotes" name="testnotes" class="f-comments" rows="6" cols="20" tabindex="3">'
+        self.managepage += currentStory.testNotes + '</textarea><br /></label>'
         
         #hidden Values
-        self.storypage += '<input id="mode" name="mode" type="hidden" value="' + mode + '" />'
-        self.storypage += '<input id="key" name="key" type="hidden" value="' + key + '" />'
+        self.managepage += '<input id="mode" name="mode" type="hidden" value="' + mode + '" />'
+        self.managepage += '<input id="key" name="key" type="hidden" value="' + key + '" />'
         
         
         #Only show estimate field if the user is assigned
         if mode == "Estimate" and currentStory.ContainsUser(currUser):
-            self.storypage += '<label for="estimate"><b><span class="req">*</span>Estimate:</b><input '+ estReadOnly +' id="estimate" name="estimate" type="text" class="f-name" tabindex="1" size="4" value="'+ estimateValue +'" /><br /></label>'
+            self.managepage += '<label for="estimate"><b><span class="req">*</span>Estimate:</b><input '+ estReadOnly +' id="estimate" name="estimate" type="text" class="f-name" tabindex="1" size="4" value="'+ estimateValue +'" /><br /></label>'
              
         #Buttons
-        self.storypage += '<div class="f-submit-wrap">'
-        if mode != 'View' and (currentStory.editable or mode == 'Delete' or mode == 'Estimate') and currentStory.finalEstimate == None:
-            self.storypage += '<input type="submit" value="' + mode + '" class="f-submit" tabindex="4" />'
+        self.managepage += '<div class="f-submit-wrap">'
+        if mode != 'View' and (((currentStory.editable or mode == 'Estimate') and currentStory.finalEstimate == None) or mode == 'Delete'):
+            self.managepage += '<input type="submit" value="' + mode + '" class="f-submit" tabindex="4" />'
         
-        self.storypage += '<a href="/UserStories"><button type="button" class="f-submit" tabindex="5">Cancel</button></a><br /></div>'
+        self.managepage += '<a href="/UserStories"><button type="button" class="f-submit" tabindex="5">Cancel</button></a><br /></div>'
                     
         #Users List
         users = db.GqlQuery("SELECT * FROM User")
-        self.storypage += '</fieldset>'
+        self.managepage += '</fieldset>'
         
         if not (mode == 'Estimate' or mode == 'View'):            
-            self.storypage += '''<div id="sidebar">
+            self.managepage += '''<div id="sidebar">
                         <h3>Estimators:</h3>
                         <fieldset>'''
                             
             if users.count(5) == 0:
-                self.storypage += '<p>There are no users available.</p>'
+                self.managepage += '<p>There are no users available.</p>'
             else:
                 
                 tabcount = 5
@@ -135,7 +140,7 @@ class UserStory(object):
                         
                         #Get the estimate per user
                         if  not (mode == 'Create' or  mode == 'Estimate'):
-                            userEst = manager.RetrieveEstimate(key, currUser)
+                            userEst = manager.RetrieveEstimate(key, username)
                             
                             if (userEst != None):
                                 estimate = '(' + str(userEst.estimate) + ')'
@@ -143,14 +148,14 @@ class UserStory(object):
                             if currentStory.ContainsUser(username):
                                 checked = 'checked="checked"'
                         
-                        self.storypage += '<label for="un'+ str(tabcount) +'">'
-                        self.storypage += '<input '+ readOnly +' '+ checked +' id="un'+ str(tabcount) +'" type="checkbox" name="usernames" value="'+ username +'" class="f-checkbox" tabindex="'+ str(tabcount) +'" />'
-                        self.storypage += ' ' + username +' '+ estimate +'</label>'
+                        self.managepage += '<label for="un'+ str(tabcount) +'">'
+                        self.managepage += '<input '+ readOnly +' '+ checked +' id="un'+ str(tabcount) +'" type="checkbox" name="usernames" value="'+ username +'" class="f-checkbox" tabindex="'+ str(tabcount) +'" />'
+                        self.managepage += ' ' + username +' '+ estimate +'</label>'
             
-            self.storypage += '</fieldset></div>'
+            self.managepage += '</fieldset></div>'
         
-        self.storypage += '</form>'
-        self.storypage += self.storyTemplate.contentEnd
-        self.storypage += self.storyTemplate.footer
+        self.managepage += '</form>'
+        self.managepage += self.manageTemplate.contentEnd
+        self.managepage += self.manageTemplate.footer
         
-        return self.storypage
+        return self.managepage

@@ -1,3 +1,9 @@
+'''
+The main file for the Python version of Planning Poker
+Contains the mapping of URLs to Python functions 
+
+@author: Eric Greer
+'''
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from views import Login
@@ -7,7 +13,10 @@ from views import UserStory
 from managers import mLogin
 from managers import mRegister
 from managers import mUserStory
+from managers import mUserManagement
 from utilities import session
+from views import UserManagement
+
 
 #Login page
 class MainPage(webapp.RequestHandler):
@@ -26,7 +35,7 @@ class MainPage(webapp.RequestHandler):
 #User Stories Page 
 class UserStoriesPage(webapp.RequestHandler):
     '''
-    This is the user stories Page
+    This is the User Stories Page
     '''
     def get(self):
         '''
@@ -70,11 +79,11 @@ class UserStoriesPage(webapp.RequestHandler):
 #User Story Page
 class UserStoryPage(webapp.RequestHandler):
     '''
-    This is the user story page
+    This is the User Story Page
     '''
     def get(self):
         '''
-        Displays the user stories page
+        Displays the user story page
         From any other page 
         '''
         
@@ -86,13 +95,15 @@ class UserStoryPage(webapp.RequestHandler):
             mode = self.request.get('type')
             id = self.request.get('us')
             
+            if not (mode == "Estimate" or mode == "Delete" or mode == "Edit" or mode == "Create"):
+                mode = "View";
             upage = UserStory.UserStory()
             self.response.out.write(upage.writeStory(session["success"], session["error"], session["user"], mode, id))
             resetMessages();
     
     def post(self):
         '''
-        Processes the user story and estimate 
+        Processes the user story: Create, Edit, Delete and Estimates 
         '''
         manager = mUserStory.mUserStory()
         user = session["user"]
@@ -106,6 +117,7 @@ class UserStoryPage(webapp.RequestHandler):
         
         url = '' + self.request.url + '?type=' + mode + '&us=' + key
         
+        #Validate the mode
         if mode == None or mode == '' or not (mode == "Estimate" or mode == "Delete" or mode == "Edit" or mode == "Create"):
             session['error'] = 'Invalid Mode'
             self.redirect(url, True)
@@ -134,6 +146,7 @@ class UserStoryPage(webapp.RequestHandler):
             description = removeHTMLTags(description)
             testnotes = removeHTMLTags(testnotes) 
        
+        #Mode Processing
         if mode == 'Create':
             b = manager.CreateUserStory(user, title, description, testnotes, usernames)
             if b:
@@ -156,7 +169,6 @@ class UserStoryPage(webapp.RequestHandler):
                 self.redirect(url, True)
                 return
                 
-        
         elif mode == 'Delete':
             #boolean b = UserStoryManager.removeUserStory(key, currUser);
             b = manager.DeleteUserStory(key, user)
@@ -170,16 +182,22 @@ class UserStoryPage(webapp.RequestHandler):
                 return
             
         elif mode == 'Estimate':
-            estimate = float(estimate)
-            b = manager.EstimateUserStory(key, user, estimate)
-            if b:
-                session['success'] = 'Successfully saved estimate'
-                self.redirect("/UserStories", True)
-                return
-            else:
-                session['error'] = "Could not create estimate, Please try again"
-                self.redirect(url, True)
-                return
+            if estimate != None and estimate != '':
+                estimate = float(estimate)
+                if estimate >= 0:
+                    b = manager.EstimateUserStory(key, user, estimate)
+                    if b:
+                        session['success'] = 'Successfully saved estimate'
+                        self.redirect("/UserStories", True)
+                        return
+                    else:
+                        session['error'] = "Could not create estimate, Please try again"
+                        self.redirect(url, True)
+                    return
+            session['error'] = "Please enter a valid estimate and try again"
+            self.redirect(url, True)
+            return
+
       
 #Registration Page
 class RegisterPage (webapp.RequestHandler):
@@ -218,6 +236,47 @@ class RegisterPage (webapp.RequestHandler):
             session["error"] = 'Could not create registration: ' + rManager.getMessage()
             self.redirect('/Register', True)
 
+#User Management Page
+class UserManagementPage (webapp.RequestHandler):
+    '''
+    This is the User Management page
+    '''
+
+    def get(self):
+        '''
+        Displays the User Management page
+        From any other page
+        '''
+        if session["user"] == '':
+            session["error"] = 'You must be logged in to access the User Management'
+            self.redirect("/", True)   
+        else:
+            mpage = UserManagement.UserManagement()
+            self.response.out.write(mpage.writeManage(session["success"], session["error"], session["user"]))
+            resetMessages()
+    
+    def post(self):
+        '''
+        Processes the Password change request
+        '''
+
+        self.response.out.write('Register Page Post')
+        oldPW = self.request.get('oldpassword')
+        newPW = self.request.get('password')
+        confirmPW = self.request.get('pwconfirm')
+        mManager = mUserManagement.mUserManagement()
+        
+        success = mManager.ChangePassword(session["user"], oldPW, newPW, confirmPW)
+        
+        if success:
+            session["success"] = 'Changed Password'
+            self.redirect("/UserManagement", True)
+        else :
+            session["error"] = 'Could not change password'
+            self.redirect('/UserManagement', True)
+
+
+
 #Logout Page
 class LogoutPage (webapp.RequestHandler):
     def get(self):
@@ -228,7 +287,7 @@ class LogoutPage (webapp.RequestHandler):
         session["success"] = 'You have successfully logged out'
         self.redirect("/", True)
 
-application = webapp.WSGIApplication([('/Logout', LogoutPage ), ('/Register', RegisterPage ), ('/UserStories', UserStoriesPage ), ('/UserStory', UserStoryPage), ('/', MainPage)], debug=True)
+application = webapp.WSGIApplication([('/Logout', LogoutPage ), ('/Register', RegisterPage ), ('/UserStories', UserStoriesPage ), ('/UserStory', UserStoryPage), ('/UserManagement', UserManagementPage), ('/', MainPage)], debug=True)
 
 session = session.Session()
 #Variables
@@ -240,6 +299,9 @@ def main():
     run_wsgi_app(application)
 
 def resetMessages():
+    '''
+    Resets the Success and Error Messages in the session
+    '''
     session["success"] = ''
     session["error"] = ''
 

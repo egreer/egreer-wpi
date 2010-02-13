@@ -7,7 +7,7 @@ from views import Templates
 
 class Register(object):
     '''
-    The registration page creator
+    The registration HTML page creator
     '''
     regTemplate = Templates.Templates()
     regPage = ''
@@ -19,10 +19,13 @@ class Register(object):
     
     def writeReg(self, success, error):
         '''
-           Creates the string representing the registration page
-           @param success: The success message 
-           @param error:  The error message
+        Creates the string representing the registration page
+        @param success: The success message to print on the page
+        @param error: The error message to print on the page
+        @return: Returns a string representing the registration page 
         '''
+        
+        
         self.regPage += self.regTemplate.SetTitle('tested')
         self.regPage += self.regTemplate.SetHeaderLinks('''<li class="first"><a href="/">Home</a></li>
                                 <li class="active"><a href="/Register">Register</a></li>''')

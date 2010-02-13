@@ -4,11 +4,10 @@ Created on Dec 30, 2009
 @author: Eric Greer
 '''
 from google.appengine.ext import db
-from entities import User 
 
 class mLogin(object):
     '''
-    classdocs
+    Contains management functions for a user to login
     '''
     message = ''
 
@@ -19,17 +18,18 @@ class mLogin(object):
     
     def Login(self, username, password):
         '''
+        Processes logging in the user 
         @param username: The username
         @param password: The password 
         '''
         users = db.GqlQuery("SELECT * FROM User WHERE username = :1", username)
         
-        if users.count(10) > 0:
-            results = users.fetch(1)
-            for result in results:
-                if result.username == username and result.password == password:
-                    self.message += username  
-                    return True
+        if users.count(5) == 1:
+            result = users.get()
+
+            if result.username == username and result.password == password:
+                self.message += username  
+                return True
         else:
             self.message += 'Invalid Username' 
             return False

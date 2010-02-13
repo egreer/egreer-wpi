@@ -9,6 +9,7 @@ from entities import User
 class UserStory(db.Model):
     '''
     User Story Objects
+    Contains Title, Description, Notes, Reference to Creator, and List of Users to estimate  
     '''
     title = db.StringProperty()
     description = db.StringProperty()
@@ -20,7 +21,6 @@ class UserStory(db.Model):
     finalEstimate = db.FloatProperty(default=None)
     editable = db.BooleanProperty(default=True)
     
-    #Add User
     def AddUser(self, Username):
         '''
         Adds the user to the user story to give an estimate
@@ -35,7 +35,6 @@ class UserStory(db.Model):
         else: 
             return False
          
-    #Clear Users
     def ClearUsers(self):
         '''
         Clears the Users assigned to the user story if the story is editable
@@ -49,7 +48,6 @@ class UserStory(db.Model):
         else:
             return False
 
-    #Remove User
     def RemoveUser(self, Username):
         '''
         Removes the user from the user story based on username
@@ -66,7 +64,6 @@ class UserStory(db.Model):
         else:
             return False
         
-    #Contains User
     def ContainsUser(self, Username):
         '''
         Checks to see if a user exists in the list of estimators for the user story
@@ -77,5 +74,11 @@ class UserStory(db.Model):
         for u in self.users:
             if u == Username:
                 return True
+            
+            continue
+            
+        else:
             return False
+        
+    
         

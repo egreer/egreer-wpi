@@ -8,7 +8,7 @@ from entities import User
 
 class mRegister(object):
     '''
-    The Registration manager
+    The Manager for registration functions to create user
     '''
     
     message = ''

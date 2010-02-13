@@ -7,7 +7,7 @@ from string import Template
 
 class Templates(object):
     '''
-    classdocs
+    Contains HTML templates useful on all HTML pages 
     '''
 
     title = Template('''
@@ -75,15 +75,25 @@ class Templates(object):
     
     def SetTitle(self, theTitle):
         '''
-            TODO comment
+        Sets the displayed tile of the page
+        @param theTitle: The tile of the page to display in the title bar
+        @return: the string containing HTML for the title.  
         '''
         return self.title.substitute(title = theTitle)
     
     def SetHeaderLinks(self, theLinks):
         '''
-            TODO comment
+        Sets the links of the tab header
+        @param theLinks: 
+        @return: The string containing the HTML for the header and the links. 
         '''
         return self.header.substitute(links = theLinks)
     
     def SetMessages(self, success, error):
+        '''
+        Sets the messages
+        @param success: a success message (green)
+        @param error: an error message  (red)
+        @return: The string containing HTML for the messages. 
+        '''
         return self.messagesLines.safe_substitute(errorMsg = error, successMsg = success)
