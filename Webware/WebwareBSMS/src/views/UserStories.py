@@ -10,8 +10,8 @@ class UserStories(object):
     '''
     The login page creator
     '''
-    storyTemplate = Templates.Templates()
-    storypage = ''
+    manageTemplate = Templates.Templates()
+    managepage = ''
 
     def __init__(self):
         '''
@@ -20,24 +20,30 @@ class UserStories(object):
 
     def writeStories(self, success, error, currUser, display, filter):
         '''
-           Creates the string representing the login page
+        Creates the string representing the login page
+        @param success: The success message to print on the page
+        @param error: The error message to print on the page
+        @param currUser: The current username to get stories on
+        @param display: a mode of display for the user stories (Owned | Assigned | Pending | Completed)
+        @param filter: a filter of the stories displayed, (All| My)
+        @return: Returns a string representing the user stories page 
         '''
         totalEstimate = 0
         storyURI = "/UserStory";
             
-        self.storypage += self.storyTemplate.SetTitle('User Stories')
-        self.storypage += self.storyTemplate.SetHeaderLinks('''<li class="first active"><a href="/UserStories">User Stories</a></li>
+        self.managepage += self.manageTemplate.SetTitle('User Stories')
+        self.managepage += self.manageTemplate.SetHeaderLinks('''<li class="first active"><a href="/UserStories">User Stories</a></li>
                 <li><a href="/UserStory?type=Create">New User Story</a></li>
                 <li><a href="/UserManagement">User Management</a></li>
                 <li><a href="/Logout">Logout</a></li>''')
-        self.storypage += self.storyTemplate.contentStart
-        self.storypage += '''
+        self.managepage += self.manageTemplate.contentStart
+        self.managepage += '''
                 <!-- User Story List -->
                 <h1>User Stories</h1>
                 '''
 
-        self.storypage += self.storyTemplate.SetMessages(success, error)
-        self.storypage += '''           
+        self.managepage += self.manageTemplate.SetMessages(success, error)
+        self.managepage += '''           
                 <div id="resultslist-wrap">
                     <div class="breadcrumb">
                         <strong>Filter by:&nbsp;&nbsp;&nbsp;</strong><a href="/UserStories">All</a> | 
@@ -47,7 +53,7 @@ class UserStories(object):
                         <a href="/UserStories?display=closed">Completed</a>
                     </div>'''
         if display == 'open' or display == 'closed':
-            self.storypage += '''
+            self.managepage += '''
                     <div class="breadcrumb" style="margin-left: 55px;">
                         <a href="/UserStories?display=''' + display + '''&filter=all">All Stories</a> | 
                         <a href="/UserStories?display=''' + display + '''&filter=my">My Stories</a>
@@ -58,10 +64,10 @@ class UserStories(object):
           
         
         if stories.count(3) == 0:
-            self.storypage += '<p>There are no User Stories.</p>'
+            self.managepage += '<p>There are no User Stories.</p>'
         else:
             #BEGIN ELSE Output of stories                
-            self.storypage += '<ol>'
+            self.managepage += '<ol>'
             
             #ITERATE over every story
             for story in stories:
@@ -101,7 +107,7 @@ class UserStories(object):
                     isOwner = False;
 
                
-                self.storypage += '<li><dl><dt><a href="'+ URI +'us='+ str(story.key()) +'">'+ story.title +'</a></dt><dd class="desc">'+ desc +'</dd>'
+                self.managepage += '<li><dl><dt><a href="'+ URI +'us='+ str(story.key()) +'">'+ story.title +'</a></dt><dd class="desc">'+ desc +'</dd>'
     
                 finalEstimate = ' ';
                 estimateValue = 0.0;
@@ -110,30 +116,30 @@ class UserStories(object):
                     totalEstimate += estimateValue
                     finalEstimate = str(estimateValue)
                        
-                self.storypage += '<dd class="desc">Final Estimate: '+ finalEstimate +'</dd> <dd class="filetype">'
+                self.managepage += '<dd class="desc">Final Estimate: '+ finalEstimate +'</dd> <dd class="filetype">'
                 if finalEstimate.isspace():
-                    self.storypage += 'Pending'
+                    self.managepage += 'Pending'
                 else:
-                    self.storypage += 'Completed'
+                    self.managepage += 'Completed'
                 
                 if isOwner:
-                    self.storypage += '<dd class="date">'
+                    self.managepage += '<dd class="date">'
                     if story.editable:
-                        self.storypage += 'editable'
+                        self.managepage += 'editable'
                     else:
-                        self.storypage += 'readonly'
+                        self.managepage += 'readonly'
                     
-                    self.storypage += '</dd><dd class="date"><a href="'+ storyURI +'?type=Delete&amp;us='+ str(story.key()) +'">Delete</a></dd>'
+                    self.managepage += '</dd><dd class="date"><a href="'+ storyURI +'?type=Delete&amp;us='+ str(story.key()) +'">Delete</a></dd>'
                     
-                self.storypage += '</dl></li>'
-            self.storypage += '</ol><span class="totalEstimate"><b id="totalEstimateBottom">Total Estimated Units: '+ str(totalEstimate) +'</b></span>'
+                self.managepage += '</dl></li>'
+            self.managepage += '</ol><span class="totalEstimate"><b id="totalEstimateBottom">Total Estimated Units: '+ str(totalEstimate) +'</b></span>'
     
         #END ELSE
-        self.storypage +='''
+        self.managepage +='''
                 </div>
                 <!-- User Story List -->
                 '''
-        self.storypage += self.storyTemplate.contentEnd
-        self.storypage += self.storyTemplate.footer
+        self.managepage += self.manageTemplate.contentEnd
+        self.managepage += self.manageTemplate.footer
         
-        return self.storypage
+        return self.managepage

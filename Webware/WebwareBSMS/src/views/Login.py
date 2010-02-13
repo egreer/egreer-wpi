@@ -7,7 +7,7 @@ from views import Templates
 
 class Login(object):
     '''
-    The login page creator
+    The login HTML page creator
     '''
     loginTemplate = Templates.Templates()
     loginpage = ''
@@ -20,7 +20,10 @@ class Login(object):
     
     def writeLogin(self, success, error):
         '''
-           Creates the string representing the login page
+        Creates the string representing the login page
+        @param success: The success message to print on the page
+        @param error: The error message to print on the page
+        @return: Returns a string representing the login page 
         '''
           
         self.loginpage += self.loginTemplate.SetTitle('Login')

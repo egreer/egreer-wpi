@@ -7,7 +7,8 @@ from google.appengine.ext import db
 
 class User(db.Model):
     '''
-    The User Objects
+    The User Object
+    Contains the First Name, Last Name, Username and Password 
     '''
     username = db.StringProperty(required=True)
     password = db.StringProperty(required=True)
