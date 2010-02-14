@@ -11,7 +11,7 @@ class UserStories(object):
     The login page creator
     '''
     manageTemplate = Templates.Templates()
-    managepage = ''
+    storiespage = ''
 
     def __init__(self):
         '''
@@ -31,19 +31,22 @@ class UserStories(object):
         totalEstimate = 0
         storyURI = "/UserStory";
             
-        self.managepage += self.manageTemplate.SetTitle('User Stories')
-        self.managepage += self.manageTemplate.SetHeaderLinks('''<li class="first active"><a href="/UserStories">User Stories</a></li>
+        self.storiespage += self.manageTemplate.SetTitle('User Stories')
+        
+        self.storiespage += '<body id="type-a" onload="updateTopTotal();">'
+        self.storiespage += self.manageTemplate.SetHeaderLinks('''<li class="first active"><a href="/UserStories">User Stories</a></li>
                 <li><a href="/UserStory?type=Create">New User Story</a></li>
                 <li><a href="/UserManagement">User Management</a></li>
                 <li><a href="/Logout">Logout</a></li>''')
-        self.managepage += self.manageTemplate.contentStart
-        self.managepage += '''
+
+        self.storiespage += self.manageTemplate.contentStart
+        self.storiespage += '''
                 <!-- User Story List -->
                 <h1>User Stories</h1>
                 '''
 
-        self.managepage += self.manageTemplate.SetMessages(success, error)
-        self.managepage += '''           
+        self.storiespage += self.manageTemplate.SetMessages(success, error)
+        self.storiespage += '''           
                 <div id="resultslist-wrap">
                     <div class="breadcrumb">
                         <strong>Filter by:&nbsp;&nbsp;&nbsp;</strong><a href="/UserStories">All</a> | 
@@ -53,21 +56,21 @@ class UserStories(object):
                         <a href="/UserStories?display=closed">Completed</a>
                     </div>'''
         if display == 'open' or display == 'closed':
-            self.managepage += '''
+            self.storiespage += '''
                     <div class="breadcrumb" style="margin-left: 55px;">
                         <a href="/UserStories?display=''' + display + '''&filter=all">All Stories</a> | 
                         <a href="/UserStories?display=''' + display + '''&filter=my">My Stories</a>
                     </div>'''
                     
-        #self.storiespage +='<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units: ' + str(totalEstimate) + '</b></span>'
+        self.storiespage +='<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units:  </b></span>'
         stories = db.GqlQuery("SELECT * FROM UserStory")
           
         
         if stories.count(3) == 0:
-            self.managepage += '<p>There are no User Stories.</p>'
+            self.storiespage += '<p>There are no User Stories.</p>'
         else:
             #BEGIN ELSE Output of stories                
-            self.managepage += '<ol>'
+            self.storiespage += '<ol>'
             
             #ITERATE over every story
             for story in stories:
@@ -107,7 +110,7 @@ class UserStories(object):
                     isOwner = False;
 
                
-                self.managepage += '<li><dl><dt><a href="'+ URI +'us='+ str(story.key()) +'">'+ story.title +'</a></dt><dd class="desc">'+ desc +'</dd>'
+                self.storiespage += '<li><dl><dt><a href="'+ URI +'us='+ str(story.key()) +'">'+ story.title +'</a></dt><dd class="desc">'+ desc +'</dd>'
     
                 finalEstimate = ' ';
                 estimateValue = 0.0;
@@ -116,30 +119,42 @@ class UserStories(object):
                     totalEstimate += estimateValue
                     finalEstimate = str(estimateValue)
                        
-                self.managepage += '<dd class="desc">Final Estimate: '+ finalEstimate +'</dd> <dd class="filetype">'
+                self.storiespage += '<dd class="desc">Final Estimate: '+ finalEstimate +'</dd> <dd class="filetype">'
                 if finalEstimate.isspace():
-                    self.managepage += 'Pending'
+                    self.storiespage += 'Pending'
                 else:
-                    self.managepage += 'Completed'
+                    self.storiespage += 'Completed'
                 
                 if isOwner:
-                    self.managepage += '<dd class="date">'
+                    self.storiespage += '<dd class="date">'
                     if story.editable:
-                        self.managepage += 'editable'
+                        self.storiespage += 'editable'
                     else:
-                        self.managepage += 'readonly'
+                        self.storiespage += 'readonly'
                     
-                    self.managepage += '</dd><dd class="date"><a href="'+ storyURI +'?type=Delete&amp;us='+ str(story.key()) +'">Delete</a></dd>'
+                    self.storiespage += '</dd><dd class="date"><a href="'+ storyURI +'?type=Delete&amp;us='+ str(story.key()) +'">Delete</a></dd>'
                     
-                self.managepage += '</dl></li>'
-            self.managepage += '</ol><span class="totalEstimate"><b id="totalEstimateBottom">Total Estimated Units: '+ str(totalEstimate) +'</b></span>'
+                self.storiespage += '</dl></li>'
+            self.storiespage += '</ol><span class="totalEstimate"><b id="totalEstimateBottom">Total Estimated Units: '+ str(totalEstimate) +'</b></span>'
     
         #END ELSE
-        self.managepage +='''
+        self.storiespage +='''
                 </div>
                 <!-- User Story List -->
                 '''
-        self.managepage += self.manageTemplate.contentEnd
-        self.managepage += self.manageTemplate.footer
+        self.storiespage += self.manageTemplate.contentEnd
         
-        return self.managepage
+        self.storiespage += '''<script type="text/javascript">
+                function updateTopTotal() {
+                    var topTotal = document.getElementById("totalEstimateTop");
+                    var bottomTotal = document.getElementById("totalEstimateBottom");
+                    
+                    var total = bottomTotal.innerHTML;
+                    
+                    topTotal.innerHTML = total;
+                }
+            </script>'''
+        
+        self.storiespage += self.manageTemplate.footer
+        
+        return self.storiespage

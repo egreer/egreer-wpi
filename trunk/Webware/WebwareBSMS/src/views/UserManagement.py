@@ -27,10 +27,14 @@ class UserManagement(object):
         '''
             
         self.managepage += self.manageTemplate.SetTitle('User Stories')
+        
+        self.managepage += '<body id="type-a">'
         self.managepage += self.manageTemplate.SetHeaderLinks('''<li class="first"><a href="/UserStories">User Stories</a></li>
                 <li><a href="/UserStory?type=Create">New User Story</a></li>
                 <li class="active"><a href="/UserManagement">User Management</a></li>
                 <li><a href="/Logout">Logout</a></li>''')
+        self.managepage += '''<script type="text/javascript" src="js/validate.js"></script>
+                <script type="text/javascript" src="js/sha512-min.js"></script>'''
         self.managepage += self.manageTemplate.contentStart
         self.managepage += '''
                 <!-- Change Password Form -->
@@ -40,7 +44,6 @@ class UserManagement(object):
                 '''
 
         self.managepage += self.manageTemplate.SetMessages(success, error)
-
         self.managepage += '''<label for="oldpassword"><b>Current Password:</b>
                             <input id="oldpassword" name="oldpassword" type="password" class="f-name" tabindex="1" /><br />
                         </label>
@@ -62,6 +65,7 @@ class UserManagement(object):
                 <!-- End Change Password Form -->
                 '''
         self.managepage += self.manageTemplate.contentEnd
+        self.managepage += '<script type="text/javascript" src="js/validate.js"></script><script type="text/javascript" src="js/sha512-min.js"></script>'
         self.managepage += self.manageTemplate.footer
         
         return self.managepage

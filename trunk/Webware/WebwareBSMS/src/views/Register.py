@@ -27,6 +27,8 @@ class Register(object):
         
         
         self.regPage += self.regTemplate.SetTitle('tested')
+        
+        self.regPage += '<body id="type-a">'
         self.regPage += self.regTemplate.SetHeaderLinks('''<li class="first"><a href="/">Home</a></li>
                                 <li class="active"><a href="/Register">Register</a></li>''')
         self.regPage += self.regTemplate.contentStart
@@ -70,6 +72,7 @@ class Register(object):
                 <!-- End Register Form -->
                 '''
         self.regPage += self.regTemplate.contentEnd
+        self.regPage += '<script type="text/javascript" src="js/validate.js"></script><script type="text/javascript" src="js/sha512-min.js"></script>'
         self.regPage += self.regTemplate.footer
         
         return self.regPage    
