@@ -37,9 +37,7 @@ class Templates(object):
     </head>
     ''')
 
-    header = Template('''
-        <body id="type-a" onload="document.getElementById('username').focus();">
-        <div id="wrap">
+    header = Template('''   <div id="wrap">
     
         <!-- Header -->
         <div id="header">

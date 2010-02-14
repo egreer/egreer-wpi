@@ -27,6 +27,8 @@ class Login(object):
         '''
           
         self.loginpage += self.loginTemplate.SetTitle('Login')
+        
+        self.loginpage += '<body id="type-a" onload="document.getElementById(\'username\').focus();">'
         self.loginpage += self.loginTemplate.SetHeaderLinks('''<li class="first active"><a href="/">Home</a></li>
                                 <li><a href="/Register">Register</a></li>''')
         self.loginpage += self.loginTemplate.contentStart
@@ -60,6 +62,7 @@ class Login(object):
                 <!-- End Login Form -->
                 '''
         self.loginpage += self.loginTemplate.contentEnd
+        self.loginpage += '<script type="text/javascript" src="js/validate.js"></script> <script type="text/javascript" src="js/sha512-min.js"></script>'
         self.loginpage += self.loginTemplate.footer
         
         return self.loginpage

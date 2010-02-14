@@ -173,7 +173,7 @@ class UserStoryPage(webapp.RequestHandler):
             #boolean b = UserStoryManager.removeUserStory(key, currUser);
             b = manager.DeleteUserStory(key, user)
             if b:
-                session['success'] = 'Deleted user story'
+                session['success'] = 'User Story was successfully deleted.'
                 self.redirect("/UserStories", True)
                 return
             else:
@@ -191,7 +191,7 @@ class UserStoryPage(webapp.RequestHandler):
                         self.redirect("/UserStories", True)
                         return
                     else:
-                        session['error'] = "Could not create estimate, Please try again"
+                        session['error'] = "Could not create estimate, please try again"
                         self.redirect(url, True)
                     return
             session['error'] = "Please enter a valid estimate and try again"
@@ -269,10 +269,10 @@ class UserManagementPage (webapp.RequestHandler):
         success = mManager.ChangePassword(session["user"], oldPW, newPW, confirmPW)
         
         if success:
-            session["success"] = 'Changed Password'
+            session["success"] = 'Password was successfully changed'
             self.redirect("/UserManagement", True)
         else :
-            session["error"] = 'Could not change password'
+            session["error"] = 'Could not change password, please try again'
             self.redirect('/UserManagement', True)
 
 

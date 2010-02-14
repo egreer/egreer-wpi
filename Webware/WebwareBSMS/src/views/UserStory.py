@@ -13,7 +13,7 @@ class UserStory(object):
     The User Story page creator
     '''
     manageTemplate = Templates.Templates()
-    managepage = ''
+    storiespage = ''
 
 
     def writeStory(self, success, error, currUser, mode, key):
@@ -57,77 +57,79 @@ class UserStory(object):
             estReadOnly = 'disabled=\"disabled\"'
              
             
-        self.managepage += self.manageTemplate.SetTitle(mode + ' User Story')
-        self.managepage += self.manageTemplate.SetHeaderLinks('''<li class="first"><a href="/UserStories">User Stories</a></li>
+        self.storiespage += self.manageTemplate.SetTitle(mode + ' User Story')
+        
+        self.storiespage += '<body id="type-a">'
+        self.storiespage += self.manageTemplate.SetHeaderLinks('''<li class="first"><a href="/UserStories">User Stories</a></li>
                 <li class="active"><a href="/UserStory?type=Create">New User Story</a></li>
-                <li><a href="/UserManagement.jsp">User Management</a></li>
+                <li><a href="/UserManagement">User Management</a></li>
                 <li><a href="/Logout">Logout</a></li>
                 ''')
-        self.managepage += self.manageTemplate.contentStart
+        self.storiespage += self.manageTemplate.contentStart
         
         
-        self.managepage += '''
+        self.storiespage += '''
                     <!-- User Story Form  -->
                     <form action="/UserStory" method="post" class="f-wrap-1" onsubmit="return '''
                     
         if mode == "Estimate":
-            self.managepage += 'checkEstimate(this);">'
+            self.storiespage += 'checkEstimate(this);">'
         else:            
-            self.managepage += 'checkUserStory(this);">'
+            self.storiespage += 'checkUserStory(this);">'
                 
-        self.managepage += '''
+        self.storiespage += '''
                     <div class="req"><b>*</b> Indicates required field</div>
                 
                     <fieldset>
-                
-                    <h3><%= pageType %> User Story</h3>
-                  '''
-        self.managepage += self.manageTemplate.SetMessages(success, error)
+                '''
+        self.storiespage += '<h3>'+ mode + ' User Story</h3>'
+                  
+        self.storiespage += self.manageTemplate.SetMessages(success, error)
 
         #Final Estimate
         if currentStory.finalEstimate != None:
-            self.managepage += '<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units: ' + str(currentStory.finalEstimate) +'</b></span>'
+            self.storiespage += '<span class="totalEstimate"><b id="totalEstimateTop">Total Estimated Units: ' + str(currentStory.finalEstimate) +'</b></span>'
         
                             
         #Title Field
-        self.managepage += '<label for="title"><b><span class="req">*</span>Title:</b>'
-        self.managepage += '<input ' + readOnly + ' id="title" name="title" type="text" class="f-name" tabindex="1" value="'+ currentStory.title + '" /><br /></label>'
+        self.storiespage += '<label for="title"><b><span class="req">*</span>Title:</b>'
+        self.storiespage += '<input ' + readOnly + ' id="title" name="title" type="text" class="f-name" tabindex="1" value="'+ currentStory.title + '" /><br /></label>'
                     
         #Description field
-        self.managepage += '<label for="description"><b><span class="req">*</span>Description:</b> <textarea ' + readOnly + ' id="description" name="description" class="f-comments" rows="6" cols="20" tabindex="2">'
-        self.managepage += currentStory.description + '</textarea><br /></label>'
+        self.storiespage += '<label for="description"><b><span class="req">*</span>Description:</b> <textarea ' + readOnly + ' id="description" name="description" class="f-comments" rows="6" cols="20" tabindex="2">'
+        self.storiespage += currentStory.description + '</textarea><br /></label>'
                     
         #Test Notes Field
-        self.managepage += '<label for="testnotes"><b>Test Notes:</b><textarea ' + readOnly + ' id="testnotes" name="testnotes" class="f-comments" rows="6" cols="20" tabindex="3">'
-        self.managepage += currentStory.testNotes + '</textarea><br /></label>'
+        self.storiespage += '<label for="testnotes"><b>Test Notes:</b><textarea ' + readOnly + ' id="testnotes" name="testnotes" class="f-comments" rows="6" cols="20" tabindex="3">'
+        self.storiespage += currentStory.testNotes + '</textarea><br /></label>'
         
         #hidden Values
-        self.managepage += '<input id="mode" name="mode" type="hidden" value="' + mode + '" />'
-        self.managepage += '<input id="key" name="key" type="hidden" value="' + key + '" />'
+        self.storiespage += '<input id="mode" name="mode" type="hidden" value="' + mode + '" />'
+        self.storiespage += '<input id="key" name="key" type="hidden" value="' + key + '" />'
         
         
         #Only show estimate field if the user is assigned
         if mode == "Estimate" and currentStory.ContainsUser(currUser):
-            self.managepage += '<label for="estimate"><b><span class="req">*</span>Estimate:</b><input '+ estReadOnly +' id="estimate" name="estimate" type="text" class="f-name" tabindex="1" size="4" value="'+ estimateValue +'" /><br /></label>'
+            self.storiespage += '<label for="estimate"><b><span class="req">*</span>Estimate:</b><input '+ estReadOnly +' id="estimate" name="estimate" type="text" class="f-name" tabindex="1" size="4" value="'+ estimateValue +'" /><br /></label>'
              
         #Buttons
-        self.managepage += '<div class="f-submit-wrap">'
+        self.storiespage += '<div class="f-submit-wrap">'
         if mode != 'View' and (((currentStory.editable or mode == 'Estimate') and currentStory.finalEstimate == None) or mode == 'Delete'):
-            self.managepage += '<input type="submit" value="' + mode + '" class="f-submit" tabindex="4" />'
+            self.storiespage += '<input type="submit" value="' + mode + '" class="f-submit" tabindex="4" />'
         
-        self.managepage += '<a href="/UserStories"><button type="button" class="f-submit" tabindex="5">Cancel</button></a><br /></div>'
+        self.storiespage += '<a href="/UserStories"><button type="button" class="f-submit" tabindex="5">Cancel</button></a><br /></div>'
                     
         #Users List
         users = db.GqlQuery("SELECT * FROM User")
-        self.managepage += '</fieldset>'
+        self.storiespage += '</fieldset>'
         
         if not (mode == 'Estimate' or mode == 'View'):            
-            self.managepage += '''<div id="sidebar">
+            self.storiespage += '''<div id="sidebar">
                         <h3>Estimators:</h3>
                         <fieldset>'''
                             
-            if users.count(5) == 0:
-                self.managepage += '<p>There are no users available.</p>'
+            if users.count(5) <= 1:
+                self.storiespage += '<p>There are no users available.</p>'
             else:
                 
                 tabcount = 5
@@ -148,14 +150,15 @@ class UserStory(object):
                             if currentStory.ContainsUser(username):
                                 checked = 'checked="checked"'
                         
-                        self.managepage += '<label for="un'+ str(tabcount) +'">'
-                        self.managepage += '<input '+ readOnly +' '+ checked +' id="un'+ str(tabcount) +'" type="checkbox" name="usernames" value="'+ username +'" class="f-checkbox" tabindex="'+ str(tabcount) +'" />'
-                        self.managepage += ' ' + username +' '+ estimate +'</label>'
+                        self.storiespage += '<label for="un'+ str(tabcount) +'">'
+                        self.storiespage += '<input '+ readOnly +' '+ checked +' id="un'+ str(tabcount) +'" type="checkbox" name="usernames" value="'+ username +'" class="f-checkbox" tabindex="'+ str(tabcount) +'" />'
+                        self.storiespage += ' ' + username +' '+ estimate +'</label>'
             
-            self.managepage += '</fieldset></div>'
+            self.storiespage += '</fieldset></div>'
         
-        self.managepage += '</form>'
-        self.managepage += self.manageTemplate.contentEnd
-        self.managepage += self.manageTemplate.footer
+        self.storiespage += '</form>'
+        self.storiespage += self.manageTemplate.contentEnd
+        self.storiespage += '<script type="text/javascript" src="js/validate.js"></script>'
+        self.storiespage += self.manageTemplate.footer
         
-        return self.managepage
+        return self.storiespage
