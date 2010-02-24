@@ -1,0 +1,4 @@
+To build the radioColorChanger demo from this file release:
+
+1) Run the Ant build.xml file under FRAMEWORK with the jarFramework command
+2) Run the Ant build.xml file under JETTQ as you would a standard file. Compiles radioColorChanger and radioTest

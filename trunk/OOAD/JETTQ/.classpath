@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="libs/multihoplib_rt.jar"/>
+	<classpathentry kind="lib" path="libs/spotlib_common.jar"/>
+	<classpathentry kind="lib" path="libs/spotlib_device.jar"/>
+	<classpathentry kind="lib" path="libs/squawk_rt.jar"/>
+	<classpathentry kind="lib" path="libs/transducerlib_rt.jar"/>
+	<classpathentry excluding="LibsHost/|build/suite/|build/|resources/" kind="src" path="FRAMEWORK"/>
+	<classpathentry excluding="resources/|build/demoApp/|build/JETTQ/|build/radioTest/|j2meclasses/demoApp/|j2meclasses/JETTQ/|j2meclasses/radioTest/|suite/|build/|j2meclasses/|reasources/" kind="src" path="dev"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
