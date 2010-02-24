@@ -1,0 +1,20 @@
+Instructions to build and deploy the application:
+1) Connect SUNSpot to the computer
+2) From eclipse right click on the build.xml file and select run as "AntBuild.."
+3) Select options in this order: clean, jar-app, jar-deploy, run
+4) Click Run
+5) In the console there will be a long list of output, once it says:
+	[java] SPOT Client starting...
+	    [java] [waiting for reset]
+
+Click the reset button on the spot.
+6) The program will load and now you can adjust the colors of the LEDs by tilting the Spot
+
+
+You can also just deploy the jar, and then click run, or load the jar into the emulator and adjust the accelerations.
+
+
+
+
+Our Framework has implemented an LED manager, and a Accelerometer manager that classes can subscribe to. 
+we have a tricolorLED Adapter that programs to the ILED interface.

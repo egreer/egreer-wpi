@@ -1,0 +1,4 @@
+Packages based on Information Expert Pattern
+Top level Manager (JETTQManager) is an implementation of the Facade pattern
+
+LED package uses the adapter pattern

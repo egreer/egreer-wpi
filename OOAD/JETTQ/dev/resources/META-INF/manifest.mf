@@ -1,0 +1,8 @@
+MIDlet-Name: radioColorChanger
+MIDlet-Version: 1.0.0
+MIDlet-Vendor: JETTQ@wpi.edu
+MIDlet-1: , , radioColorChanger.RadioColorChangerMain
+MIDlet-2: , , radioTest.RadioTestMain
+MIDlet-3: , , streamRadioTest.StreamRadioTest
+MicroEdition-Profile: IMP-1.0
+MicroEdition-Configuration: CLDC-1.1
