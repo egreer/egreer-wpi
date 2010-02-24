@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="hello.DBComponent" version="1.0" installer="$workspace/Hello/src/hello" >
+
+  <PropertyList>
+    <Author>Eric Greer, Jason Codding, Steven Washington</Author>
+    <ComponentURL>http://www.wpi.edu/~egreer/CS3733/Database</ComponentURL>
+    <DigitalFingerPrint>56b149b90a94133331af538160cf3621</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>5989</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804141922</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IGame</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IGM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IPlugin</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IPM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IStat</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IUM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IUser</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Hello/bin/hello" qualifiedName="hello"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IGame.class" qualifiedName="ks.framework.interfaces.IGame"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IGM_DB.class" qualifiedName="ks.framework.interfaces.IGM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IPlugin.class" qualifiedName="ks.framework.interfaces.IPlugin"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IPM_DB.class" qualifiedName="ks.framework.interfaces.IPM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IStat.class" qualifiedName="ks.framework.interfaces.IStat"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IUM_DB.class" qualifiedName="ks.framework.interfaces.IUM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IUser.class" qualifiedName="ks.framework.interfaces.IUser"  />
+</Contents>
+
+</Component>
+
