@@ -1,0 +1,3 @@
+<Resource sourceDir="$workspace/StandAlone/images/oxymoron" resourceName="/images/oxymoron"  />
+   <Resource sourceDir="$workspace/StandAlone/images/tiny" resourceName="/images/tiny"  />
+ 

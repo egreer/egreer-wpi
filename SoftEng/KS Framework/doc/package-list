@@ -1,0 +1,10 @@
+bb.client
+bb.server
+ks.framework
+ks.framework.cipc
+ks.framework.common
+ks.framework.common.network
+ks.framework.communicator
+ks.framework.interfaces
+ks.framework.sipc
+ks.gui.sample
