@@ -1,0 +1,62 @@
+Project 4 Analysis
+Eric Greer
+egreer
+
+Installation instructions:
+Compile with make. Run using same parameters as the CMU Package
+
+1) Answers to assignment 3.
+For each hidden node change, only modified line 134 in facetrain.c to the appropriate number 
+
+ H_Nodes| Epoch|  t_perf | epoch | t1_perf | epoch | t2_perf| epoch | 
+--------+------+---------+-------+---------+-------+--------+-------+
+       4|  100 | 89.4928 |90     | 89.2086 |98     |87.9808 |94     |
+       4|  200 | 92.0290 |157    | 89.2086 |98     |87.9808 |94     |
+--------+------+---------+-------+---------+-------+--------+-------+
+       6|  100 | 80.7971 |100    | 81.2950 |70     |81.2500 |69     |
+       6|  200 | 86.9565 |165    | 81.2950 |70     |81.2500 |69     |
+--------+------+---------+-------+---------+-------+--------+-------+
+      10|  100 | 83.3333 |100    | 83.4532 |38     |83.1731 |56     |
+      10|  200 | 90.942  |185    | 87.0504 |162    |87.0192 |131    |
+
+t_perf/epoch means the best t_perf and the # of the epoch for that t_perf
+
+2) Description of code
+Adapted the code in two files facetrain.c, and imagenet.c.
+imagenet.c changed the if statements at the bottom to recognize the expressions. 
+			Assigns a positive value to target[1] if it is a negative expression
+			Assigns a positive value to target[2] if it is a positive expression
+			Assigns a negative to the alternate target for each expression.
+facetrain.c changed the number of output units to 2. Also changed if/else expressions.   
+
+3) Experiments
+ A total of six experiments were performed. Experiments were performed for each of the 
+ hidden values 4, 6, 10 with 100 epochs, and then each was repeated with 200 epochs. 
+    In the beginning I experimented with using one output, but that returned worse results, 
+    also tried ignoring neutral expressions but that also returned worse results.
+       
+4) Topology...?
+	Commands:
+	./facetrain -n h4e100 -t train_all_list -1 test1_all_list -2 test2_all_list > h4e100.log
+	./facetrain -n h4e200 -t train_all_list -1 test1_all_list -2 test2_all_list > h4e200.log
+	./facetrain -n h6e100 -t train_all_list -1 test1_all_list -2 test2_all_list > h6e100.log
+	./facetrain -n h6e200 -t train_all_list -1 test1_all_list -2 test2_all_list > h6e200.log
+	./facetrain -n h10e100 -t train_all_list -1 test1_all_list -2 test2_all_list > h10e100.log
+	./facetrain -n h10e200 -t train_all_list -1 test1_all_list -2 test2_all_list > h10e200.log
+	
+	Output:
+	The output from each command can be found in the output directory. 
+	Parse file names as h[number of hidden nodes]e[number of epochs]
+	Text output from the commands is in the .log files, the other files are networks.
+	
+	# Iterations through algorithm:
+	h4e100, h6e100, or h10e100 =  62300
+	h4e200, h6e200, or h10e200 = 124600
+	
+	
+5) Strengths and Weaknesses:
+	S: Was always able to achieve a 80% rate of predicting at negative/positive face  
+	S: Very simple to modify.
+	W: The system was never able to get a 100% detection rate on the training sets. 
+	W: Have to go into the code to modify the hidden values.
+	W: No written way to graphically display the network. 
