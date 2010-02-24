@@ -1,0 +1,17 @@
+16
+B01 Biggs, Jason             10CS 
+B01 Klein, Chris             10MB 
+B01 Nicholas, Thomas Ian     10IMG
+B01 Hannigan, Alyson         09ECE
+B01 Elizabeth, Shannon       09BB 
+B02 Reid, Tara               09CE 
+B06 Thomas, Eddie Kaye       10CS 
+B06 Scott, Seann William     10CS 
+B07 Levy, Eugene             HSND 
+B07 Lyonne, Natasha          10CS 
+B07 Suvari, Mena             08ECE
+B07 Coolidge, Jennifer       GSCS 
+B07 Owen, Chris              08ECE
+B08 Lively, Eric             10IMG
+B08 Cheek, Molly             10CS 
+B08 Washington, General Georg10CS 

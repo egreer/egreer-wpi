@@ -1,0 +1,22 @@
+/**
+ * This interface imposes a total ordering on the objects of each class that
+ * implements it.  This ordering is referred to as the class's <i>natural
+ * ordering</i>, and the class's <tt>compareTo</tt> method is referred to as
+ * its <i>natural comparison method</i>.<p>
+ */
+public interface Comparable {
+
+    /**
+     * Compares this object with the specified object for order.  Returns a
+     * negative integer, zero, or a positive integer as this object is less
+     * than, equal to, or greater than the specified object.<p>
+     *
+     * @param   o the Object to be compared.
+     * @return  a negative integer, zero, or a positive integer as this object
+     *		is less than, equal to, or greater than the specified object.
+     * 
+     * @throws ClassCastException if the specified object's type prevents it
+     *         from being compared to this Object.
+     */
+    public int compareTo(Object o);
+}

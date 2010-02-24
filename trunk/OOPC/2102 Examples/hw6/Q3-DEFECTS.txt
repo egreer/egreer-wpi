@@ -1,0 +1,33 @@
+1. Missing constructor of SudokuBoard must allocate space for board. Insert it or
+   predefine initial values.
+2. In the SudokuDriver.loadBoard, there is a "in.nextLine" which should be "fileInput.nextLine"
+3. In SudokuDriver.loadBoard:
+
+      int digit = (int) (ch - '1');   // convert char => int   SHOULD be - '0'
+
+4. In SudokuDriver.loadboard:
+
+     for (char file = 'a'; file < 'i'; file++) {               SHOULD BE <=
+     
+5. SudokuBoard.set
+
+      board[col][row] = file;                         SHOULD BE = digit;
+      
+6. SudokuBoard.toString() missing leading BAR on each row.
+
+			// start with bar
+			s += "|";
+
+7. SudokuBoard.toString() doesn't check for isEmpty() before appending
+   the value of the get(file, rank).
+   
+8. Missing carriage return at end of first row in toString.
+
+9. SudokuDriver.loadBoard
+
+   if (s.equals("SAR1")) {     Should be !s.equals("SAR1"))
+
+10. SudokuDriver.loadBoard
+
+	for (char file = 'a'; file < 'i'; file--) {       SHOULD BE ++
+   

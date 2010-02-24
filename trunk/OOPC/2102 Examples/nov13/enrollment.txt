@@ -1,0 +1,35 @@
+CS1101 A01 Ostreicher, Chris        46008 10ECE
+CS1102 A02 Myers, Kevin             42009 10CS 
+CS1101 A02 Flaherty, Michelle       10331 10BB 
+CS1101 A02 Nadia                    20621 10HU 
+CS1101 A03 Lathum, Victoria         10221 10CE 
+CS1101 A03 Finch, Paul              10627 09BB 
+CS1101 A03 Stifler, Steve           10623 09CS 
+CS1101 A03 Simpson, Jessica         10622 10ECE
+CS1101 A03 Sherman, Charles         12621 10CS 
+MA1021 A01 Ostreicher, Chris        46008 10ECE
+MA1021 A01 Thomas, Eddie Kaye       00641 10CS 
+MA1021 A02 Owen, Chris              46109 08ECE
+CS2102 B01 Biggs, Jason             45779 10CS 
+CS2102 B01 Klein, Chris             57631 10MB 
+CS2102 B01 Nicholas, Thomas Ian     10621 10IMG
+CS2102 B01 Hannigan, Alyson         12406 09ECE
+CS2102 B01 Elizabeth, Shannon       63839 09BB 
+CS2102 B02 Reid, Tara               17753 09CE 
+CS2102 B06 Thomas, Eddie Kaye       00641 10CS 
+CS2102 B06 Scott, Seann William     46009 10CS 
+CS2102 B07 Levy, Eugene             57812 HSND 
+CS2102 B07 Lyonne, Natasha          13839 10CS 
+CS2102 B07 Suvari, Mena             62839 08ECE
+CS2102 B07 Coolidge, Jennifer       46079 GSCS 
+CS2102 B07 Owen, Chris              46109 08ECE
+CS2102 B08 Lively, Eric             63539 10IMG
+CS2102 B08 Cheek, Molly             63829 10CS 
+CS2102 B08 Washington, General Georg63819 10CS 
+PH1110 A01 Nicholas, Thomas Ian     10621 10IMG
+PH1110 A01 Hannigan, Alyson         12406 09ECE
+PH1110 A01 Elizabeth, Shannon       63839 09BB 
+PH1120 A02 Reid, Tara               17753 09CE 
+PH1120 A02 Thomas, Eddie Kaye       00641 10CS 
+PH1120 A02 Scott, Seann William     46009 10CS 
+PH1130 A01 Levy, Eugene             57812 HSND 

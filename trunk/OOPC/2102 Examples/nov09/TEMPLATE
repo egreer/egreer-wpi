@@ -1,0 +1,32 @@
+package SOME-PACKAGE;
+
+public class SOME-NAME {
+
+   DATA-FIELDS
+   
+   CONSTRUCTOR(s)
+   
+   METHOD(s)
+   
+   public String toString() {
+   }
+   
+   public boolean equals (Object o) {
+   }
+      
+   public int hashCode () {
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
