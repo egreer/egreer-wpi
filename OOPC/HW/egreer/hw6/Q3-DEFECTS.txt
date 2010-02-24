@@ -1,0 +1,64 @@
+Question 3:
+egreer
+jm4games
+
+1)	Was: 		if (s.equals("SAR1")) {return null;}
+	Changed to: if (!s.equals("SAR1")) {return null;}
+	
+	Reason: Would always fail if the board was in the correct format. Changed so that it now fails when not in correct format.
+
+
+2) 	Was:		s = in.nextLine();
+	Changed to: s = fileInput.nextLine();
+	
+	Reason: Wrong type of input. "in" is a generic scanner class, and we need to input a file. Changed to take input from a file.
+	Suggested improvment: Documentation should say "Load a Sudoku board from a file."  instead of from "the keyboard."
+
+
+3)	Was:		for (char file = 'a'; file < 'i'; file--)
+	Changed to:	for (char file = 'a'; file <= 'i'; file++)
+	
+	Reason: There is an infinite loop. 'a' has to exceed 'i' at some point to terminate the for loop. Also loop has to equal 'i' to add the last row to the board.
+	
+
+4)	Was:		int digit = (int) (ch - '1');
+	Changed to: int digit = (int) (ch - '0');
+	
+	Reason: Sets up the board with the number - 1 in the space where the number should be. Changed to place the correct number in the board.
+
+
+5)	Was:		board[row][col] = file;
+	Changed to:	board[row][col] = digit;
+	
+	Reason: Need to set the space equal to the int that is the correct number, not a char that represents the column.
+
+
+6)	Was:		int [][] board;
+	Changed to:	int [][] board = new int[9][9]; 
+	
+	Reason: The board wasn't initailzed. Since all Sodoku Boards are all the same size SodokuBoard doesn't need a constructor.
+
+
+7)	Was:		s += "+---+---+---+";
+	Change to:	s += "+---+---+---+" + "\n";
+	
+	Reason: Changed to ensure the termination of the first line before the first set of numbers.
+	Sugested improvment: s += "|"; in the for loop in front of each row for consistancy.
+	
+	
+8)	Was:		static Scanner in;
+	Changed to:	static Scanner in = new Scanner(System.in);
+	
+	Reason: "in" wasn't set to read any type of input. Changed to read input from keyboard.
+
+
+9)	Was:		System.out.println (board.toString()); (In try statment.)
+	Changed to:	
+	
+	Reason: This line caused the board to be printed out twice because at the begining of the while loop there is all ready a print out of the board.
+
+
+10) Was:		System.out.println (); System.out.println ("Current Board:"); System.out.println ();	(In the try statement)
+	Changed to: System.out.println (); System.out.println ("Current Board:"); System.out.println ();	(At the begining of the while loop.)
+	
+	Reason: The title current board should always be printed out just before the board is printed out.
