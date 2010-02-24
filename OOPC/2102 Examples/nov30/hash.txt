@@ -1,0 +1,74 @@
+Here are implementations for other methods in SkeletonHash that haven't been tested.
+
+	
+	/**
+	 * Determines if key is present in the hashtable
+	 * 
+	 * @param value   Object that may be in the hash table associated with some key
+	 * @return
+	 */
+	public boolean containsKey (Object key) {
+		// which bucket does this <key,value> go into?
+		int bucket = key.hashCode() % 10;
+		
+		// see if we are in the linked list. If we aren't then we prepend
+		SkeletonHashNode node = find (head[bucket], key);
+		return (node != null);
+	}
+	
+	       
+	/**
+	 * Determines if value is present in the hashtable for some key.
+	 * 
+	 * @param value   Object that may be in the hash table associated with some key
+	 * @return
+	 */
+	public boolean containsValue (Object value) {
+		for (int i = 0; i < head.length; i++) {
+			SkeletonHashNode node = head[i];
+			while (node != null) {
+				if (node.value.equals (value)) {
+					return true;
+				}
+				node = node.next;  // advance
+			}
+		}
+		
+		return false;
+	}
+	
+	
+	/**
+	 * Return the number of <key,value> pairs in the hashtable.
+	 */
+	public int size() {
+		int count = 0;
+		
+		for (int i = 0; i < head.length; i++) {
+			SkeletonHashNode node = head[i];
+			while (node != null) {
+				count++;
+				
+				node = node.next;  // advance
+			}
+		}
+		
+		return count;
+	}
+	
+	/**
+	 * Determine if any <key,value> is present in the hashtable.
+	 * 
+	 * @return   true if empty.
+	 */
+	public boolean isEmpty() {
+		for (int i = 0; i < head.length; i++) {
+			if (head[i] != null) {
+				return false;     // at least one is not null. Not empty.
+			}
+		}
+		
+		return true;  // we are empty
+	}
+
+	

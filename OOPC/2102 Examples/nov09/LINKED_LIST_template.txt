@@ -1,0 +1,64 @@
+A linked list is a dynamic arrangement of information.
+
+Even Nature uses a linked list for DNA structure
+
+  see: http://www.colorado.edu/outreach/BSI/k12activities/dnastructureteacher.html
+  
+The basic template is as follows:
+
+(1) You need to define a class to represent "an Element In The list". These are often
+    called 'nodes'.
+
+   public class StudentNode {
+   
+      /** The Student information. Access is package-protected */
+      Student      value;
+      
+      /** The next in the chain. NOTE: this is not an object of type Student. Access is package-protected. */
+      StudentNode  next;
+   
+   }
+   
+(2) You need to define a class to represent "the list"
+
+   public class StudentList {
+   
+      /** The First node in the list. */
+      StudentNode     head;
+   
+   }
+   
+(3) Operations for manipulating the linked list are placed in the List class. 
+
+   public class StudentList {
+   
+      // to be considered as needed.
+   		
+   }
+
+(4) The only methods one typically adds to the node class are:
+
+// note this is a package-protected class. No-one external to the implementation
+// even needs to know that it exists.
+class StudentNode {
+   
+      /** The Student information. */
+      private Student      value;
+      
+      /** The next in the chain. NOTE: this is not an object of type Student. */
+      private StudentNode  next;
+      
+      /** Set the Student stored for this node. */
+      public void setValue (Student s) { value = s; }
+      
+      /** Return the Student stored for this node. */
+      public Student getValue () { return value; }
+      
+      /** Return a string representation of the node by delegating to the Student. */
+      public String toString() { return value.toString(); }
+   }
+   
+It is an important observation to note that this class is NEVER needed by anyone other
+than the one who designs/implements the StudentList class. Thus, this class is declared
+as 'package-protected'   
+   
