@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.DBComponent" version="1.0" installer="$workspace/Hello/src/ks" >
+
+  <PropertyList>
+    <Author>Eric Greer, Jason Codding, Steven Washington</Author>
+    <ComponentURL>http://www.wpi.edu/~egreer/CS3733/Database</ComponentURL>
+    <DigitalFingerPrint>c6d526a71a5ac8cddbe6e861026ceb79</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>5927</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804141932</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IGame</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IGM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IPlugin</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IPM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IStat</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IUM_DB</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IUpdateStats</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IUser</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Hello/bin/ks" qualifiedName="ks"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IGame.class" qualifiedName="ks.framework.interfaces.IGame"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IGM_DB.class" qualifiedName="ks.framework.interfaces.IGM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IPlugin.class" qualifiedName="ks.framework.interfaces.IPlugin"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IPM_DB.class" qualifiedName="ks.framework.interfaces.IPM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IStat.class" qualifiedName="ks.framework.interfaces.IStat"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IUM_DB.class" qualifiedName="ks.framework.interfaces.IUM_DB"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IUpdateStats.class" qualifiedName="ks.framework.interfaces.IUpdateStats"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IUser.class" qualifiedName="ks.framework.interfaces.IUser"  />
+</Contents>
+
+</Component>
+
