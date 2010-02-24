@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.framework.sipc.Server" version="1.0" installer="$workspace/Framework/components" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/sipc</ComponentURL>
+    <DigitalFingerPrint>3429055e0550f68d42a6a7515d57fc13</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>6485</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804271414</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <RequiredInterface>ks.framework.interfaces.IProcessMessage</RequiredInterface>
+    <RequiredInterface>ks.framework.interfaces.IAuthorization</RequiredInterface>
+    <RequiredInterface>ks.framework.interfaces.IRegistration</RequiredInterface>
+    <Property>port</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/sipc" qualifiedName="ks.framework.sipc"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IProcessMessage.class" qualifiedName="ks.framework.interfaces.IProcessMessage"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IAuthorization.class" qualifiedName="ks.framework.interfaces.IAuthorization"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IRegistration.class" qualifiedName="ks.framework.interfaces.IRegistration"  />
+</Contents>
+
+</Component>
+

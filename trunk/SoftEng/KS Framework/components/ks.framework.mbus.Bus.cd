@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.framework.mbus.Bus" version="1.0" installer="$workspace/Framework/components" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/mbus</ComponentURL>
+    <DigitalFingerPrint>388786e3360f2b5261dd5a1cb128a2d3</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>3036</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804172104</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.ILocal</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IProcessMessage</ProvidedInterface>
+    <RequiredInterface>ks.framework.interfaces.ISubscribe</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/mbus" qualifiedName="ks.framework.mbus"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IProcessMessage.class" qualifiedName="ks.framework.interfaces.IProcessMessage"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/ISubscribe.class" qualifiedName="ks.framework.interfaces.ISubscribe"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/ILocal.class" qualifiedName="ks.framework.interfaces.ILocal"  />
+</Contents>
+
+</Component>
+

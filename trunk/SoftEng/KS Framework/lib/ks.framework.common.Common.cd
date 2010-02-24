@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.framework.common.Common" version="1.0" installer="$workspace/Framework/lib" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/common</ComponentURL>
+    <DigitalFingerPrint>360f80949704e01d317b0ecd65616fd9</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>20847</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804211912</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IProcessMessage</ProvidedInterface>
+    <Property>url</Property>
+    <Property>xsd</Property>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/common" qualifiedName="ks.framework.common"  />
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/common/network" qualifiedName="ks.framework.common.network"  />
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/interfaces" qualifiedName="ks.framework.interfaces"  />
+</Contents>
+
+</Component>
+

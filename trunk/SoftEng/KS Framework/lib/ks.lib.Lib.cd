@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.lib.Lib" version="1.0" installer="$workspace/Framework/lib" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/common</ComponentURL>
+    <DigitalFingerPrint>8490ddf3471ce9d6a774b22514f770f5</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>238115</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804212247</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IProcessMessage</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/lib" qualifiedName="ks.lib"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/common/games" qualifiedName="ks.common.games"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/common/controller" qualifiedName="ks.common.controller"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/common/view" qualifiedName="ks.common.view"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/common/model" qualifiedName="ks.common.model"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/client/gamefactory" qualifiedName="ks.client.gamefactory"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/client/timer" qualifiedName="ks.client.timer"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/launcher" qualifiedName="ks.launcher"  />
+   <Entry sourceDir="$workspace/StandAlone/ks/client/gamefactory/skin" qualifiedName="ks.client.gamefactory.skin"  />
+   <Entry sourceDir="$workspace/StandAlone/heineman" qualifiedName="heineman"  />
+   <Entry sourceDir="$workspace/StandAlone/heineman/idiot" qualifiedName="heineman.idiot"  />
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/interfaces" qualifiedName="ks.framework.interfaces"  />
+</Contents>
+
+</Component>
+

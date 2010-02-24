@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.framework.cipc.Client" version="1.0" installer="$workspace/Framework/components" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/cipc</ComponentURL>
+    <DigitalFingerPrint>f6dce8bee23226513204a806bd6701df</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>6213</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804222357</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IConnection</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IConnectionHandler</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IProcessMessage</ProvidedInterface>
+    <RequiredInterface>ks.framework.interfaces.IProcessMessage</RequiredInterface>
+    <RequiredInterface>ks.framework.interfaces.IConnectionHandler</RequiredInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/cipc" qualifiedName="ks.framework.cipc"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IProcessMessage.class" qualifiedName="ks.framework.interfaces.IProcessMessage"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IConnectionHandler.class" qualifiedName="ks.framework.interfaces.IConnectionHandler"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IConnection.class" qualifiedName="ks.framework.interfaces.IConnection"  />
+</Contents>
+
+</Component>
+

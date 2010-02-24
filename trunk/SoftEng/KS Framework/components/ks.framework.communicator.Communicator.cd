@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Component type="ks.framework.communicator.Communicator" version="1.0" installer="$workspace/Framework/components" >
+
+  <PropertyList>
+    <Author>George T. Heineman</Author>
+    <ComponentURL>http://www.wpi.edu/~heineman/CS3733/Framework/components/ks/framework/communicator</ComponentURL>
+    <DigitalFingerPrint>836bb4be340f9b78aa3f49477716155f</DigitalFingerPrint>
+    <Email></Email>
+    <FileSize>2916</FileSize>
+    <LicenseRequired></LicenseRequired>
+    <ReleaseDate>200804242319</ReleaseDate>
+    <Threaded></Threaded>
+    <VendorName></VendorName>
+    <ProvidedInterface>ks.framework.interfaces.IOutput</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IConnectionStatus</ProvidedInterface>
+    <ProvidedInterface>ks.framework.interfaces.IRegistration</ProvidedInterface>
+  </PropertyList>
+
+<Contents>
+   <Entry sourceDir="$workspace/Framework/bin/ks/framework/communicator" qualifiedName="ks.framework.communicator"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IOutput.class" qualifiedName="ks.framework.interfaces.IOutput"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IConnectionStatus.class" qualifiedName="ks.framework.interfaces.IConnectionStatus"  />
+   <Entry sourceFile="$workspace/Framework/bin/ks/framework/interfaces/IRegistration.class" qualifiedName="ks.framework.interfaces.IRegistration"  />
+</Contents>
+
+</Component>
+
