@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Algorithms</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.jdt.core.javabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.jdt.core.javanature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>hw/proj1/projdata0</name>
+			<type>1</type>
+			<location>C:/Documents and Settings/Eric Greer/workspace/Algorithms/hw/proj1/projdata0</location>
+		</link>
+		<link>
+			<name>hw/proj2/proj2.testdata</name>
+			<type>1</type>
+			<location>C:/Documents and Settings/Eric Greer/workspace/Algorithms/hw/proj2/proj2.testdata</location>
+		</link>
+	</linkedResources>
+</projectDescription>
