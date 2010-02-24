@@ -1,0 +1,10 @@
+<!-- Indices written at Fri, 4 Dec 2009 16:22:08 UTC -->
+
+<datastore-indexes>
+
+    <!-- Used 2 times in query history -->
+    <datastore-index kind="Estimate" ancestor="true" source="auto">
+        <property name="estimate_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>
