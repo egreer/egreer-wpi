@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="Rick" default="build" basedir=".">
+
+	<path id="compile.classpath">
+		<fileset dir="lib" includes="*.jar" />
+	</path>
+
+	<path id="test.classpath">
+		<fileset dir="lib" includes=".jar" />
+		<fileset dir="bin" includes=".class" />
+	</path>
+
+	<target name="build" depends="jar" description="Build the project">
+	</target>
+
+	<target name="jar" depends="test" description="Create project.jar file">
+			<jar jarfile="rick.jar" basedir="bin">
+				<exclude name="**/*Test*" />
+			</jar>
+	</target>
+	
+	<target name="test" depends="compile" description="Run unit tests">
+		<junit printsummary="true" haltonfailure="false">
+			<classpath>
+				<pathelement location="bin" />
+				<pathelement location="lib" />
+				<pathelement location="lib/junit.jar" />
+			</classpath>
+			<formatter type="xml" />
+			<batchtest todir="reports">
+				<fileset dir="test" />
+
+			</batchtest>
+
+		</junit>
+	</target>
+
+
+	<target name="compile" depends="clean">
+		<javac srcdir="src" destdir="bin" />
+		<javac srcdir="test" destdir="bin" classpathref="compile.classpath" />
+	</target>
+
+	<target name="clean" description="Remove any compiled or derived files">
+		<delete dir="bin" />
+		<mkdir dir="bin" />
+		<mkdir dir="reports"/>
+	</target>
+
+	
+	
+</project>
