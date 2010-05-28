@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>hd.server.LoginServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/hd_mqp/login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>userServlet</servlet-name>
+    <servlet-class>hd.server.profile.UserServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>userServlet</servlet-name>
+    <url-pattern>/hd_mqp/user</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>timesheetServlet</servlet-name>
+    <servlet-class>hd.server.timesheet.TimesheetServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>timesheetServlet</servlet-name>
+    <url-pattern>/hd_mqp/timesheet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>w2wServlet</servlet-name>
+    <url-pattern>/hd_mqp/w2w</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>w2wServlet</servlet-name>
+    <servlet-class>hd.server.timesheet.W2WServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet-mapping>
+    <servlet-name>tPrintServlet</servlet-name>
+    <url-pattern>/hd_mqp/tp</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>tPrintServlet</servlet-name>
+    <servlet-class>hd.server.timesheet.TimesheetPrintService</servlet-class>
+  </servlet>
+  
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
