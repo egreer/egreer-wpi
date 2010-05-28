@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="PatchWizard">
+		<item value="708" key="DIALOG_WIDTH"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="690" key="DIALOG_HEIGHT"/>
+		<item value="290" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="PreviewPatchPage">
+	</section>
+	<section name="ResizableDialogBounds">
+		<item value="600" key="height"/>
+		<item value="800" key="width"/>
+		<item value="97" key="y"/>
+		<item value="240" key="x"/>
+	</section>
+</section>

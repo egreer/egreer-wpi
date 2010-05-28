@@ -1,0 +1,25 @@
+Project 3
+Team 17
+Eric Greer
+
+No diff file was generated as I didn't use SVN and couldn't compare to the base version. 
+Only touched classes in simpledb.tx & simpledb.tx.concurrency
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WAIT-FOR-DIE DESIGN
+
+Lock table was modified to implement a policy for obtaining the lock. The policy was 
+designed so that the lock table would ask the policy if it can obtain the lock right
+away or if it would need to wait. If it could do neither then the policy threw a
+LockAbortException. The wait for die policy checked to see if the transaction number
+of the requesting transaction was older the the transaction currently locking the 
+block. The txnum was used instead of a time stamp in the transaction because the setup
+of the database was to passing the txnum and not the whole transaction.
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WAIT-FOR-GRAPH DESIGN
+
+It is a 2 dimensional array that stores the conflicts in a directed graph. Checks to see if 
+the addition of a lock would cause a loop. If so then it throws a lock abort, else it returns
+whether the tx will have to wait or not. on an unlock removes all conflicts.  
