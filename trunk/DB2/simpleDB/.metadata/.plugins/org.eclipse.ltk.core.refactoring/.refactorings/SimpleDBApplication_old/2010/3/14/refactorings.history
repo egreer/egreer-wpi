@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 1 elements(s) to &apos;SimpleDB_2.8/simpledb.buffer&apos;&#x0D;&#x0A;- Original project: &apos;SimpleDBApplication&apos;&#x0D;&#x0A;- Destination element: &apos;SimpleDB_2.8/simpledb.buffer&apos;&#x0D;&#x0A;- Original element: &apos;edu.wpi.cs.cs4432.project1.team10.GemrayBufferMgr.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=SimpleDB_2.8/&lt;simpledb.buffer" element1="/src&lt;edu.wpi.cs.cs4432.project1.team10{GemrayBufferMgr.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1269978716925" units="1" version="1.0"/>
+</session>

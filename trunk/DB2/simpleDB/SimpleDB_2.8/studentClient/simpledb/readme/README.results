@@ -1,0 +1,321 @@
+Project 3
+Team 17
+Eric Greer
+
+Test StdOut
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+BEGIN TX PACKAGE TEST
+new transaction: 1
+new transaction: 2
+new transaction: 3
+Tx 5: write 4 start
+new transaction: 4
+new transaction: 5
+1 | Tx: 3 has -1 lock
+Tx 5: write 4 end
+Tx 5: read 4 start
+1 | Tx: 3 changed to 1 lock
+Tx 5: read 4 end
+Tx 5: read 5 start
+2 | Tx: 3 has 1 lock
+Tx 5: read 5 end
+Tx 5: write 5 start
+2 | Tx: 3 has -1 lock from share.
+Tx 5: write 5 end
+1 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+2 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 3 rolled back
+Tx 2: read 1 start
+3 | Tx: 2 has 1 lock
+Tx 2: read 1 end
+new transaction: 6
+Tx 3: write 2 start
+4 | Tx: 6 has -1 lock
+Tx 3: write 2 end
+new transaction: 7
+Tx 4: write 1 start
+3 | Tx: 7 could not obtain xlock.
+Tx 4: could not obtain lock
+transaction 7 rolled back
+Tx 2: read 2 start
+Tx 3: read 1 start
+3 | Tx: 6 has 1 lock
+Tx 3: read 1 end
+Tx 3: write 3 start
+5 | Tx: 6 has -1 lock
+Tx 3: write 3 end
+4 | Unlocked 6 Lock is now: 1 with 1 locks and 0 waiting.
+3 | Unlocked 6 Lock is now: 1 with 1 locks and 0 waiting.
+5 | Unlocked 6 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 6 rolled back
+4 | Tx: 2 has 1 lock after waiting.
+Tx 2: read 2 end
+Tx 2: write 3 start
+5 | Tx: 2 has -1 lock
+Tx 2: write 3 end
+3 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+4 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+5 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 2 rolled back
+Tx 6: read 6 start
+6 | Tx: 4 has 1 lock
+Tx 6: read 6 end
+Tx 7: read 6 start
+6 | Tx: 5 has 1 lock
+Tx 7: read 6 end
+Tx 7: write 6 start
+6 | Tx: 5 could not obtain 1 lock.
+Tx 7: could not obtain lock
+6 | Unlocked 5 Lock is now: 1 with 1 locks and 0 waiting.
+transaction 5 rolled back
+6 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 4 rolled back
+Tx 6: write 7 start
+7 | Tx: 4 has -1 lock
+Tx 6: write 7 end
+Tx 7: read 7 start
+7 | Tx: 5 could not obtain slock.
+Tx 7: could not obtain lock
+transaction 5 rolled back
+7 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 4 rolled back
+transaction 1 rolled back
+*****TxTest: Good tx history
+TX 1 Start Read 1
+TX 2 Start Read 1
+TX 3 Start Read 1
+TX 2 End Read 1
+TX 3 End Read 1
+TX 3 Start Read 2
+TX 2 Start Update 1
+TX 1 End Read 1
+TX 1 Start Read 2
+TX 2 End Update 1
+TX 2 Start Read 2
+TX 1 End Read 2
+TX 1 Start Update 1
+TX 1 End Update 1
+TX 3 End Read 2
+TX 3 Start Read 3
+TX 2 End Read 2
+TX 3 End Read 3
+
+Testing Simple DB StdOut for Blackbox
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+new transaction: 1
+creating new database
+1 | Tx: 1 has 1 lock
+1 | Tx: 1 has -1 lock from share.
+2 | Tx: 1 has 1 lock
+2 | Tx: 1 has -1 lock from share.
+3 | Tx: 1 has 1 lock
+3 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 has 1 lock
+4 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+1 | Tx: 1 changed to 1 lock
+2 | Tx: 1 changed to 1 lock
+2 | Tx: 1 has -1 lock from share.
+3 | Tx: 1 changed to 1 lock
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+4 | Tx: 1 has -1 lock from share.
+2 | Tx: 1 changed to 1 lock
+2 | Tx: 1 has -1 lock from share.
+4 | Tx: 1 changed to 1 lock
+3 | Tx: 1 has -1 lock from share.
+5 | Tx: 1 has 1 lock
+5 | Tx: 1 has -1 lock from share.
+5 | Tx: 1 changed to 1 lock
+5 | Tx: 1 has -1 lock from share.
+2 | Tx: 1 changed to 1 lock
+3 | Tx: 1 changed to 1 lock
+5 | Tx: 1 changed to 1 lock
+6 | Tx: 1 has 1 lock
+6 | Tx: 1 has -1 lock from share.
+7 | Tx: 1 has 1 lock
+6 | Tx: 1 changed to 1 lock
+2 | Tx: 1 has -1 lock from share.
+5 | Tx: 1 has -1 lock from share.
+5 | Tx: 1 changed to 1 lock
+5 | Tx: 1 has -1 lock from share.
+5 | Tx: 1 changed to 1 lock
+5 | Tx: 1 has -1 lock from share.
+2 | Tx: 1 changed to 1 lock
+5 | Tx: 1 changed to 1 lock
+1 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+2 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+3 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+4 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+5 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+6 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+7 | Unlocked 1 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 1 committed
+database server ready
+new transaction: 2
+42 | Tx: 2 has 1 lock
+43 | Tx: 2 has 1 lock
+43 | Tx: 2 has -1 lock from share.
+44 | Tx: 2 has 1 lock
+45 | Tx: 2 has 1 lock
+46 | Tx: 2 has 1 lock
+46 | Tx: 2 has -1 lock from share.
+46 | Tx: 2 changed to 1 lock
+46 | Tx: 2 has -1 lock from share.
+46 | Tx: 2 changed to 1 lock
+44 | Tx: 2 has -1 lock from share.
+47 | Tx: 2 has 1 lock
+47 | Tx: 2 has -1 lock from share.
+47 | Tx: 2 changed to 1 lock
+47 | Tx: 2 has -1 lock from share.
+42 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+43 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+44 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+45 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+46 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+47 | Unlocked 2 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 2 committed
+new transaction: 3
+42 | Tx: 3 has 1 lock
+53 | Tx: 3 has 1 lock
+54 | Tx: 3 has 1 lock
+45 | Tx: 3 has 1 lock
+55 | Tx: 3 has 1 lock
+56 | Tx: 3 has 1 lock
+57 | Tx: 3 has 1 lock
+57 | Tx: 3 has -1 lock from share.
+58 | Tx: 3 has 1 lock
+57 | Tx: 3 changed to 1 lock
+58 | Tx: 3 has -1 lock from share.
+42 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+53 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+54 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+45 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+55 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+56 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+57 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+58 | Unlocked 3 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 3 committed
+new transaction: 4
+42 | Tx: 4 has 1 lock
+53 | Tx: 4 has 1 lock
+54 | Tx: 4 has 1 lock
+45 | Tx: 4 has 1 lock
+55 | Tx: 4 has 1 lock
+56 | Tx: 4 has 1 lock
+60 | Tx: 4 has 1 lock
+61 | Tx: 4 has 1 lock
+61 | Tx: 4 has -1 lock from share.
+42 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+53 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+54 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+45 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+55 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+56 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+60 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+61 | Unlocked 4 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 4 committed
+new transaction: 5
+42 | Tx: 5 has 1 lock
+53 | Tx: 5 has 1 lock
+54 | Tx: 5 has 1 lock
+45 | Tx: 5 has 1 lock
+55 | Tx: 5 has 1 lock
+56 | Tx: 5 has 1 lock
+60 | Tx: 5 has 1 lock
+62 | Tx: 5 has 1 lock
+60 | Tx: 5 has -1 lock from share.
+63 | Tx: 5 has 1 lock
+63 | Tx: 5 has -1 lock from share.
+42 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+53 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+54 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+45 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+55 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+56 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+60 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+62 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+63 | Unlocked 5 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 5 committed
+new transaction: 6
+new transaction: 7
+new transaction: 8
+new transaction: 9
+42 | Tx: 7 has 1 lock
+42 | Tx: 8 has 1 lock
+53 | Tx: 7 has 1 lock
+42 | Tx: 9 has 1 lock
+53 | Tx: 8 has 1 lock
+53 | Tx: 9 has 1 lock
+54 | Tx: 7 has 1 lock
+54 | Tx: 8 has 1 lock
+45 | Tx: 7 has 1 lock
+45 | Tx: 8 has 1 lock
+54 | Tx: 9 has 1 lock
+45 | Tx: 9 has 1 lock
+55 | Tx: 9 has 1 lock
+55 | Tx: 8 has 1 lock
+55 | Tx: 7 has 1 lock
+56 | Tx: 8 has 1 lock
+56 | Tx: 7 has 1 lock
+56 | Tx: 9 has 1 lock
+64 | Tx: 8 has 1 lock
+7 | Tx: 8 has 1 lock
+64 | Tx: 9 has 1 lock
+64 | Tx: 7 has 1 lock
+7 | Tx: 9 has 1 lock
+7 | Tx: 7 has 1 lock
+65 | Tx: 7 has 1 lock
+65 | Tx: 8 has 1 lock
+65 | Tx: 9 has 1 lock
+62 | Tx: 8 has 1 lock
+62 | Tx: 8 has -1 lock from share.
+66 | Tx: 8 has 1 lock
+42 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+53 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+54 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+45 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+55 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+56 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+64 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+7 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+65 | Unlocked 8 Lock is now: 1 with 2 locks and 0 waiting.
+62 | Unlocked 8 Lock is now: 0 with 0 locks and 0 waiting.
+66 | Unlocked 8 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 8 committed
+new transaction: 10
+42 | Tx: 10 has 1 lock
+53 | Tx: 10 has 1 lock
+54 | Tx: 10 has 1 lock
+45 | Tx: 10 has 1 lock
+55 | Tx: 10 has 1 lock
+56 | Tx: 10 has 1 lock
+64 | Tx: 10 has 1 lock
+7 | Tx: 10 has 1 lock
+67 | Tx: 7 has 1 lock
+65 | Tx: 10 has 1 lock
+67 | Tx: 7 has -1 lock from share.
+67 | Tx: 7 changed to 1 lock
+66 | Tx: 7 has 1 lock
+42 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+53 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+54 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+45 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+55 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+56 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+64 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+7 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+65 | Unlocked 7 Lock is now: 1 with 2 locks and 0 waiting.
+67 | Unlocked 7 Lock is now: 0 with 0 locks and 0 waiting.
+66 | Unlocked 7 Lock is now: 0 with 0 locks and 0 waiting.
+transaction 7 committed
+new transaction: 11

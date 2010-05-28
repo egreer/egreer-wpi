@@ -1,0 +1,59 @@
+Project 3
+Team 17
+Eric Greer
+
+=-=-=-=-=-=-=-=-=-=-=-=-=
+TESTING SCENARIOS
+
+These testing scenarios were each designed to test a particular condition in
+the Wait-Die policy that can occur in the code that should be checked. These 
+test scenarios were show as complete coverage of the possible conditions by 
+the Eclipse plug-in EclEmma. EclEmma measures code coverage of tests to 
+ensure that they are executing each line of code. By verifying the expected 
+results versus the actual results we can see if the code is executing correctly
+
+=-=-=-=-=-=-=-=-=-=-=-=-=
+1) See if an older TX will wait for an xLock on a sLock block
+tx2(blk1, shared)
+tx2(blk1, exclusive) //waits
+
+|2) TX has xLock, but now only needs sLock
+tx5(blk3, exclusive)
+tx5(blk3, shared)
+
+|3) See if an older TX will wait for an xLock on a xLock block
+tx2(blk, exclusive)
+tx1(blk, exclusive) //waits
+
+|4) TX has exclusive rights to share lock and needs to update to xLock 
+tx5(blk4, shared)
+tx5(blk4, exclusive)
+
+5) TX has a sLock and needs to update to xLock, and is older then everything else waiting
+tx1(blk, shared)
+tx2(blk, shared)
+tx1(blk, exclusive) //waits
+
+|6) TX has a sLock and needs to update to xLock, and is younger someone else waiting
+tx6(blk6, shared)
+tx7(blk6, shared)
+tx7(blk6, exclusive) //dies
+
+|7) TX wants a sLock but someone has xLock, TX is older
+tx3(blk, exclusive)
+tx2(blk, shared) //waits
+
+|8) TX	 wants a sLock but someone has xLock, TX is younger
+tx6(blk7, exclusive)
+tx7(blk7, shared) //dies
+
+|9) TX wants a sLock and someone else has a sLock
+tx2(blk, shared)
+tx3(blk, shared)
+
+|10) TX wants a sLock and no one has a lock
+tx5(blk4, shared)
+
+|11) TX wants a xLock and no one has a lock
+tx5(blk3, exclusive)
+ 

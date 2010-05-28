@@ -1,0 +1,24 @@
+#Tue Apr 20 01:59:03 EDT 2010
+org.eclipse.team.svn.ui.panel.remote.ComparePanel.width=470
+org.eclipse.team.svn.ui.panel.common.SelectRevisionPanel.height=515
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.width=640
+org.eclipse.team.svn.ui.panel.local.CommitPanel.height=580
+org.eclipse.team.svn.ui.panel.local.CommitPanel.width=824
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.width=470
+preference.decoration.icon.modified=true
+eclipse.preferences.version=1
+org.eclipse.team.svn.ui.panel.local.RevertPanel.height=253
+firstStartup=false
+org.eclipse.team.svn.ui.panel.common.SelectRevisionPanel.width=700
+history.compareUrl=aHR0cHM6Ly9zb3VyY2Vmb3JnZS53cGkuZWR1L3N2bi9yZXBvcy9tcmVnYXkvU2ltcGxlREJfMi44L3NpbXBsZWRi
+org.eclipse.team.svn.ui.panel.remote.ComparePanel.height=162
+history.repositoryUser=ZWdyZWVy
+org.eclipse.team.svn.ui.panel.reporting.ErrorCancelPanel.height=137
+org.eclipse.team.svn.ui.panel.local.RevertPanel.width=600
+org.eclipse.team.svn.ui.panel.local.SavePatchInWorkspacePanel.width=640
+history.comment=ZGlmZg\=\=;cmVzdWx0cw0K;TG9nZ2luZyENCg\=\=;dGVzdA0K;UGVyZm9ybWFuY2UgdGVzdGluZw\=\=;ZGVzaWduDQo\=;DQpEaWZmIGZpbGU\=;UmVhZG1lIG5hbWU\=;SmF2YWRvYyBPdGhlcnM\=;VGVzdGluZyBKYXZhIGRvYw\=\=
+org.eclipse.team.svn.ui.panel.local.AddToSVNPanel.width=600
+org.eclipse.team.svn.ui.panel.local.SavePatchInWorkspacePanel.height=300
+org.eclipse.team.svn.ui.panel.ListSelectionPanel.height=193
+history.repositoryURL=aHR0cHM6Ly9zb3VyY2Vmb3JnZS53cGkuZWR1L3N2bi9yZXBvcy9tcmVnYXk\=
+org.eclipse.team.svn.ui.panel.local.AddToSVNPanel.height=224

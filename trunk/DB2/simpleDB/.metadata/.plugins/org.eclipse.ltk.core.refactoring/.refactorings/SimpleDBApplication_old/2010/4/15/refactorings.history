@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SimpleDBApplication/readme/simpledb.patch&apos; to &apos;simpledb.diff&apos;" description="Rename resource &apos;simpledb.patch&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="readme/simpledb.patch" name="simpledb.diff" stamp="1270503795873" updateReferences="true"/>
+</session>

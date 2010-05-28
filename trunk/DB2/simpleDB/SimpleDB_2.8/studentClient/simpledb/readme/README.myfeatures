@@ -1,0 +1,15 @@
+Project 3
+Team 17
+Eric Greer
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+FEATURE LIST
+
+It is not known whether the Wait-Graph policy will work. It will not detect complex 
+loops because I only implemented a check for simple loops between two nodes. I did
+not write a complete DFS algorithm to look for the complex loops.
+
+I did not write testing scenarios with the Wait-Graph policy in mind so the results
+from the test runs on it are only for the expected values of the same scenarios in 
+Wait-Die. So if the tests are run then they may be executing correctly but the tests 
+could show that the results are wrong.

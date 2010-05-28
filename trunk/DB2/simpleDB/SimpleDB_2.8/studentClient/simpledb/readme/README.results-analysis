@@ -1,0 +1,29 @@
+Project 3
+Team 17
+Eric Greer
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BLACKBOX TESTING
+
+I did not find that the black box testing was helpful in finding problems with the 
+code. It was nearly impossible to get the timing in such a way that the methods would
+execute simultaneously, creating the desired conflicts or shared locks. Because the 
+database executes on many blocks there is no guarantee that the transactions will 
+use the same blocks in a way that conflicts.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+TIMEOUT
+I actually did not do any testings for time out before I converted to using the 
+policies. But from what I've seen it is a bad idea if there are any large processes 
+that take time as they will cause many transactions to be rolled back unnecessarily.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WAIT-DIE
+
+Actually notices all conflicts that I described in the testing scenario, and seems to be pretty
+effective at diagnosing the problems. Causes minimal number of rollbacks.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WAIT-GRAPH
+I didn't do extensive enough testing to tell if there was significant difference between the 
+program or if my version works. Seems more complex.
