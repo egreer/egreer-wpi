@@ -1,0 +1,182 @@
+package bad;
+
+import java.applet.Applet;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.StringTokenizer;
+
+// Seriously, now.... Not working, yet....
+public class BadNarcotic extends Applet implements MouseMotionListener, MouseListener{
+	Image cards[] = new Image[53];
+	int d[] = new int[52];
+	int pt[][] = new int[4][52];
+	int tp[] = new int[4];
+	int ax, ay, px, py, sc, nl=52, b=0, h=-1, z=-1, idx=0;
+	
+	public void init() {
+		int c = 0;
+		java.awt.MediaTracker mt = new java.awt.MediaTracker (this);
+
+		String p1 = "A 2 3 4 5 6 7 8 9 10 J Q K";
+		String p2 = "C D H S";
+		for (StringTokenizer rst = new StringTokenizer(p1); rst.hasMoreTokens(); ) {
+			String r = rst.nextToken();
+			for (StringTokenizer sst = new StringTokenizer(p2); sst.hasMoreTokens(); ) {
+				String key = r + sst.nextToken();
+				java.net.URL url = this.getClass().getResource ("/bad/images/" + key + ".gif");
+				cards[c] = java.awt.Toolkit.getDefaultToolkit().getImage(url);
+				mt.addImage (cards[c], c++);
+			}
+		}
+
+		java.net.URL u = this.getClass().getResource ("/bad/images/Back.gif");
+		cards[52] = java.awt.Toolkit.getDefaultToolkit().getImage(u);
+
+		mt.addImage (cards[52], c++);
+		try {
+			mt.waitForAll();
+		} catch (InterruptedException ie) {
+		}
+		
+		addMouseListener (this);
+		addMouseMotionListener (this);
+		setBackground(new Color (220, 255, 220));
+		setSize (800,650);
+		
+		for (int i = 0; i < 52; i++) { d[i] = i; }
+		
+		// Treat each pair of values b[i] and b[i+1] as two cards that should be swapped.
+		for (int i = 0; i < 2048; i = i+2) {
+			int idx1 = (int)(52*Math.random());
+			int idx2 = (int)(52*Math.random());
+			int t = d[idx1]; d[idx1] = d[idx2]; d[idx2] = t;
+		}
+		
+		for (int i = 0; i < 4; i++) { tp[i] = -1; }
+		update();
+	}
+	
+	private void update() {
+		if (idx == 52) {
+			idx = b;
+			for (int i = 0; i < 4; i++) {
+				for (int j = 0; j <= tp[i]; j++) {
+					d[idx++] = pt[i][j];
+				}
+				tp[i] = -1;
+			}
+			nl=idx-b;
+			idx = b;
+		}
+		
+		for (int i = 0; i < 4; i++) {
+			tp[i]++;
+			pt[i][tp[i]] = d[idx++];
+			nl--;
+			if (idx == 52) return;
+		}
+	}
+	
+	public void paint (Graphics g) {
+		if (idx != 52) {
+			g.drawImage(cards[52], 10, 10, this);
+		}
+		
+		for (int i = 0; i < 4; i++) {
+			if (tp[i] < 0) continue;
+			int x = pt[i][tp[i]];
+			if (x != -2) {
+				g.drawImage(cards[x], 20+(i+1)*80, 10, this);
+			}
+		}
+		
+		if (z != -1) {
+			g.drawImage(cards[z], px-ax, py-ay, this);
+		}
+		
+		g.drawString(""+sc, 500, 10);
+		g.drawString(""+nl, 500, 80);
+	}
+
+	public void mouseClicked(MouseEvent e) {
+		if (e.getClickCount() > 1) {
+			int c = pt[0][tp[0]];
+			for (int i = 1; i < 4; i++) {
+				if (pt[i][tp[i]]/4 != c/4) {
+					return;
+				}
+			}
+			
+			for (int i = 0; i < 4; i++) {
+				pt[i][tp[i]--] = -1;
+			}
+			sc+=4;
+			b+=4;
+		}
+		
+		if (sc == 52) {
+			setBackground(Color.red);
+		}
+	}
+
+	public void mouseEntered(MouseEvent e) {}
+	public void mouseExited(MouseEvent e) {}
+	public void mouseMoved(MouseEvent e) {}
+	
+	public void mousePressed(MouseEvent e) {
+		px = e.getX();
+		py = e.getY();
+		h = -1+(px-20)/80;
+		if (h == -1) {
+			update();
+			repaint();
+			return;
+		}
+		
+		if (h < -1 || h > 3) {
+			repaint();
+			h = -1;
+			return;
+		}
+		
+		int q = tp[h]--;
+		z = pt[h][q];
+		pt[h][q] = -1;
+		ax = px - (20+(h+1)*80);
+		// 20+(i+1)*80
+		ay = py-10;
+	}
+
+	public void mouseReleased(MouseEvent e) {
+		if (h == -1) return;
+		px = e.getX();
+		py = e.getY();
+		int i = -1+(px-20)/80;
+		if (i == -1 || h == i || i > 3 || tp[i] == -1 || i > h) {
+			pt[h][++tp[h]] = z;
+			z=-1;
+			repaint();
+			return;
+		}
+		int q = tp[i];
+		
+		int d = pt[i][q];
+		if (z/4 == d/4) {
+			pt[i][++tp[i]] = z;
+			z = -1;
+		} else {
+			pt[h][++tp[h]] = z;
+			z=-1;
+		}
+		repaint();
+	}
+
+	public void mouseDragged(MouseEvent e) {
+		px = e.getX();
+		py = e.getY();
+		
+		repaint();
+	}
+
+	
+}
